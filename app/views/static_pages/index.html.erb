@@ -1,7 +1,7 @@
-<% if current_user %>
+<%# if current_user %>
   <div id="drop_zone">
     <div class="main_content">
-    <h1 class="main">Simcha</h1>
+    <h1 class="main">Skuvo</h1>
     <h2 class="main">Please drag in your photo.</h2>
     <ul>
       <form method="post" action="/" enctype="multipart/form-data" id="form">
@@ -11,15 +11,15 @@
       </form>
     </div>
     </ul>
-    <div class="loader">
+    <!-- <div class="loader">
       <img src="/loader.gif">
-    </div>
+    </div> -->
   </div>
-<% else %>
-  <h1>Welcome to Skuvo</h1>
-  <p>Please Sign up or Log in to upload photos</p>
+<%# else %>
+  <!-- <h1>Welcome to Skuvo</h1>
+  <p>Please Sign up or Log in to upload photos</p> -->
 
   <%#= erb :_signup_form, :layout => false %>
 
   <%#= erb :_login_form, :layout => false %>
-<% end %>
+<%# end %>

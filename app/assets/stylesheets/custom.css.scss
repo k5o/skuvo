@@ -1,0 +1,106 @@
+body {
+  background-image: url('/assets/bg.png');
+  font:14px 'Lato',verdana,helvetica,arial,sans-serif;
+  height:100%;
+  color: #a2a2a2;
+  text-shadow:1px 1px #FFF;
+}
+
+.main_content {
+  width: 300px;
+  margin: 0px auto;
+  margin-top: 20%;
+}
+
+h1.main {
+  font-family: 'Oleo Script';
+  color: #91C46C;
+  font-size: 3em;
+  margin: 0px;
+  text-align: center;
+  /*display: inline-block;*/
+}
+
+h2.main {
+  text-align: center;
+  font-family: 'Lato';
+  font-weight: 700;
+  margin: 0px;
+  /*display: inline-block;*/
+}
+
+.container {
+  clear:both;
+  margin: auto;
+  width: 960px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+#drop_zone {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 99%;
+  height: 99%;
+}
+
+#logo {
+  float: left;
+  font-family: 'Oleo Script';
+  color: #91C46C;
+  font-size: 3em;
+  margin: 0px;
+  padding: 10px 10px 10px 0px;
+}
+
+#logo a:hover {
+  color: #91C46C;
+}
+
+nav {
+  float: right;
+  width: 960px;
+  margin: 0px auto;
+}
+
+nav a {
+  color: #91C46C;
+
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #C6E070;
+}
+
+.nav li {
+  font-family: 'Lato';
+  font-size: 1.2em;
+  padding: 18px;
+}
+
+.over {
+  border: 3px dashed #000;
+  opacity: 0.2;
+}
+
+#list {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+li {
+  text-align: left;
+  font:14px 'Lato',verdana,helvetica,arial,sans-serif;
+  list-style: none;
+}
+
+::selection {
+  background-color: #C6E070;
+}
