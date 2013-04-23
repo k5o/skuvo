@@ -1,7 +1,9 @@
 class CreatePhotosTable < ActiveRecord::Migration
-  def up
-  end
-
-  def down
+	def change
+    create_table :photos do |t|
+      t.string :url
+      t.string :short_url
+      t.references :user
+    end
   end
 end
