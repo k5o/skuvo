@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <title>jQuery File Upload Example</title>
+
+<style>
+.bar {
+	max-width: 200px;
+    height: 18px;
+    background-color: green;
+}
+</style>
 </head>
 <body>
 
@@ -18,15 +26,18 @@
 <script>
 $(function () {
   $('#new_photo').fileupload({
+
     dataType: 'script',
       add: function (e, data) {
+      	
       	var imageData = []
       	var files = data.originalFiles;
       	for (var i = 0, f; f = files[i]; i++){
-	      	imageData.push("<p>Name: " + f.name + ", Size: " + (f.size/1000).toFixed(2) + " kb</p>");
+	      	imageData.push("<p>Name: " + f.name + ", Size: " + (f.size/1000).toFixed(0) + " kb</p>");
 	      	}
+	      var progressBar = '<div id="progress"><div class="bar" style="width: 0%;"></div></div>'
 	    		
-    		document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
+    		document.getElementById('imageData').innerHTML = '<ul>' + '<li>' + imageData.join('') + '</li>' + '<li>' + progressBar + '</li>' + '</ul>';
 
         data.context = $('<button/>').text('Upload')
           .appendTo(document.body)
@@ -37,7 +48,18 @@ $(function () {
     	},
       done: function (e, data) {
         data.context.text('Upload finished.');
-      }
+      },
+        progress: function (e, data) {
+        var progress = parseInt(data.loaded / data.total * 100, 10);
+        console.log(data.loaded)
+        console.log(data.total)
+        console.log("PRogress")
+
+        $('#progress .bar').css(
+            'width',
+            progress + '%'
+        );
+    	}
   });
 });
 </script>
