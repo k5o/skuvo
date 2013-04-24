@@ -20,6 +20,14 @@ $(function () {
   $('#new_photo').fileupload({
     dataType: 'script',
       add: function (e, data) {
+      	var imageData = []
+      	var files = data.originalFiles;
+      	for (var i = 0, f; f = files[i]; i++){
+	      	imageData.push("<p>Name: " + f.name + ", Size: " + (f.size/1000).toFixed(2) + " kb</p>");
+	      	}
+	    		
+    		document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
+
         data.context = $('<button/>').text('Upload')
           .appendTo(document.body)
           .click(function () {
@@ -28,11 +36,13 @@ $(function () {
             });
     	},
       done: function (e, data) {
-      	console.log("We're done")
         data.context.text('Upload finished.');
       }
   });
 });
 </script>
+
+<div id="imageData">
+</div>
 </body> 
 </html>

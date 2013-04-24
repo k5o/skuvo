@@ -4,6 +4,7 @@
     <h1 class="main">Skuvo</h1>
     <h2 class="main">Please drag in your photo.</h2>
     <ul>
+      <%= form_for Photo.new do |f| %>
       <form method="post" action="/" enctype="multipart/form-data" id="form">
       <output id="list">
       </output>
