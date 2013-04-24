@@ -11,8 +11,6 @@
   <%= file_field_tag :image, multiple: true %>
 <% end %>
 
-
-<%#= file_field_tag :image, :multiple => true, :name => "photo[image]" %>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="/assets/vendor/jquery.ui.widget.js"></script>
 <script src="/assets/jquery.iframe-transport.js"></script>
@@ -20,7 +18,7 @@
 <script>
 $(function () {
   $('#new_photo').fileupload({
-    dataType: 'json',
+    dataType: 'script',
       add: function (e, data) {
         data.context = $('<button/>').text('Upload')
           .appendTo(document.body)
@@ -30,6 +28,7 @@ $(function () {
             });
     	},
       done: function (e, data) {
+      	console.log("We're done")
         data.context.text('Upload finished.');
       }
   });
