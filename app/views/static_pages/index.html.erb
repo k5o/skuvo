@@ -36,14 +36,15 @@ $(function () {
 	      	imageData.push("<p>Name: " + f.name + ", Size: " + (f.size/1000).toFixed(0) + " kb</p>");
 	      	}
 	      var progressBar = '<div id="progress"><div class="bar" style="width: 0%;"></div></div>'
-	    		
-    		document.getElementById('imageData').innerHTML = '<ul>' + '<li>' + imageData.join('') + '</li>' + '<li>' + progressBar + '</li>' + '</ul>';
+
+        $('#imageData').('<ul>' + '<li>' + imageData.join('') + '</li>' + '</ul>');
 
         data.context = $('<button/>').text('Upload')
           .appendTo(document.body)
           .click(function () {
             data.context = $('<p/>').text('Uploading...').replaceAll($(this));
-                data.submit();
+            $(data.context).append(progressBar);
+              data.submit();
             });
     	},
       done: function (e, data) {
