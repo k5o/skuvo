@@ -26,30 +26,33 @@
 <script>
 $(function () {
   $('#new_photo').fileupload({
-
     dataType: 'script',
       add: function (e, data) {
-      	
       	var imageData = []
       	var files = data.originalFiles;
+        debugger
+        data.context = $('<button/>').text('Upload').appendTo('#imageData ul li p').click(function () {
+          data.context = $('<p/>').text('Uploading...').replaceAll($(this));
+          $(data.context).append(progressBar);
+          data.submit();
+        });
+
       	for (var i = 0, f; f = files[i]; i++){
 	      	imageData.push("<p>Name: " + f.name + ", Size: " + (f.size/1000).toFixed(0) + " kb</p>");
 	      	}
+
 	      var progressBar = '<div id="progress"><div class="bar" style="width: 0%;"></div></div>'
 	    		
-    		document.getElementById('imageData').innerHTML = '<ul>' + '<li>' + imageData.join('') + '</li>' + '<li>' + progressBar + '</li>' + '</ul>';
+    		document.getElementById('imageData').innerHTML = '<ul>' + '<li>' + imageData.join('') + '</li>' + '</ul>';
 
-        data.context = $('<button/>').text('Upload')
-          .appendTo(document.body)
-          .click(function () {
-            data.context = $('<p/>').text('Uploading...').replaceAll($(this));
-                data.submit();
-            });
+        
     	},
+
       done: function (e, data) {
         data.context.text('Upload finished.');
       },
-        progress: function (e, data) {
+
+      progress: function (e, data) {
         var progress = parseInt(data.loaded / data.total * 100, 10);
         console.log(data.loaded)
         console.log(data.total)
