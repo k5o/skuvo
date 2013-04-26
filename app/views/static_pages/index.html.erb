@@ -73,5 +73,10 @@ $(function () {
 <ul id="imageData">
 </ul>
 </div>
+
+<div style="width: 500px;">
+  Problems:
+  <li>Conflict between innerhtml and append on line 42 (document.getElementById('imageData').innerHTML). If I add single items with innerhtml, it replaces the current imageData. If I use append instead, batch dnd multi files imageData gets repeated as many times as there are files. Jquery demo uploader has it tight though</li>
+  <li> How to get upload button and progress bar on same row as image data, must be some sort of enumerator?</li>
 </body> 
 </html>
