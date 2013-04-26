@@ -30,20 +30,16 @@ $(function () {
       add: function (e, data) {
       	var imageData = []
       	var files = data.originalFiles;
-        debugger
-        data.context = $('<button/>').text('Upload').appendTo('#imageData ul li p').click(function () {
-          data.context = $('<p/>').text('Uploading...').replaceAll($(this));
-          $(data.context).append(progressBar);
-          data.submit();
-        });
-
+        
       	for (var i = 0, f; f = files[i]; i++){
 	      	imageData.push("<p>Name: " + f.name + ", Size: " + (f.size/1000).toFixed(0) + " kb</p>");
-	      	}
+
+          // $('#imageData').append('<li>' + '<p>Name: ' + f.name + ', Size: ' + (f.size/1000).toFixed(0) + ' kb</p>' + '</li>');
+      	}
 
 	      var progressBar = '<div id="progress"><div class="bar" style="width: 0%;"></div></div>'
-
-        $('#imageData').('<ul>' + '<li>' + imageData.join('') + '</li>' + '</ul>');
+        
+        document.getElementById('imageData').innerHTML = '<li>' + imageData.join('') + '</li>';
 
         data.context = $('<button/>').text('Upload')
           .appendTo(document.body)
@@ -73,7 +69,9 @@ $(function () {
 });
 </script>
 
-<div id="imageData">
+<div>
+<ul id="imageData">
+</ul>
 </div>
 </body> 
 </html>
