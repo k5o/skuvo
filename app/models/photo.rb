@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-	attr_accessible :url
+	attr_accessible :filepicker_url
 	belongs_to :user
 	mount_uploader :url, PhotoUploader
 

@@ -1,11 +1,8 @@
 class PhotosController < ApplicationController
 	def create
-		@photo = Photo.new
-		@photo.url = params['image']
-		if @photo.save
-			render 'success'
-		else
-			render 'error'
-		end
+		@photo = Photo.new(params[:photo])
+		@photo.url = params[:photo][:filepicker_url]
+		@photo.save
+		redirect_to root_path
 	end
 end

@@ -1,82 +1,11 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<meta charset="utf-8">
-<title>jQuery File Upload Example</title>
+<%= filepicker_js_include_tag %>
 
-<style>
-.bar {
-	max-width: 200px;
-    height: 18px;
-    background-color: green;
-}
-</style>
-</head>
-<body>
+<%= form_for Photo.new do |f| %>
+  <div>
+    <%= f.label :filepicker_url, "Upload Some Pics:" %>
+    
+    <%= f.filepicker_field :filepicker_url %>
+  </div>
 
-<%= form_for Photo.new, :controller => "photos", :action => "create" do |f| %>
-  <%= f.label :image, "Upload paintings:" %>
-  <%= file_field_tag :image, multiple: true %>
+  <%= f.submit %>
 <% end %>
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="/assets/vendor/jquery.ui.widget.js"></script>
-<script src="/assets/jquery.iframe-transport.js"></script>
-<script src="/assets/jquery.fileupload.js"></script>
-<script>
-$(function () {
-  $('#new_photo').fileupload({
-    dataType: 'script',
-      add: function (e, data) {
-      	var imageData = []
-      	var files = data.originalFiles;
-        
-      	for (var i = 0, f; f = files[i]; i++){
-	      	imageData.push("<p>Name: " + f.name + ", Size: " + (f.size/1000).toFixed(0) + " kb</p>");
-
-          // $('#imageData').append('<li>' + '<p>Name: ' + f.name + ', Size: ' + (f.size/1000).toFixed(0) + ' kb</p>' + '</li>');
-      	}
-
-	      var progressBar = '<div id="progress"><div class="bar" style="width: 0%;"></div></div>'
-        
-        document.getElementById('imageData').innerHTML = '<li>' + imageData.join('') + '</li>';
-
-        data.context = $('<button/>').text('Upload')
-          .appendTo(document.body)
-          .click(function () {
-            data.context = $('<p/>').text('Uploading...').replaceAll($(this));
-            $(data.context).append(progressBar);
-              data.submit();
-            });
-    	},
-
-      done: function (e, data) {
-        data.context.text('Upload finished.');
-      },
-
-      progress: function (e, data) {
-        var progress = parseInt(data.loaded / data.total * 100, 10);
-        console.log(data.loaded)
-        console.log(data.total)
-        console.log("PRogress")
-
-        $('#progress .bar').css(
-            'width',
-            progress + '%'
-        );
-    	}
-  });
-});
-</script>
-
-<div>
-<ul id="imageData">
-</ul>
-</div>
-
-<div style="width: 500px;">
-  Problems:
-  <li>Conflict between innerhtml and append on line 42 (document.getElementById('imageData').innerHTML). If I add single items with innerhtml, it replaces the current imageData. If I use append instead, batch dnd multi files imageData gets repeated as many times as there are files. Jquery demo uploader has it tight though</li>
-  <li> How to get upload button and progress bar on same row as image data, must be some sort of enumerator?</li>
-</body> 
-</html>
