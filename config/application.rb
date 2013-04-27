@@ -59,6 +59,7 @@ module Skuvo
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.filepicker_rails.api_key = ENV['FILEPICKET_APIKEY']
+    filepicker_code = YAML.load(File.read(Rails.root.join('config', 'initializers' ,'a-codes.yml')))
+    config.filepicker_rails.api_key = filepicker_code
   end
 end

@@ -13,6 +13,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/config/initializers/a-codes.rb
+/config/initializers/a-codes.yml
 /public/uploads/
 .DS_Store

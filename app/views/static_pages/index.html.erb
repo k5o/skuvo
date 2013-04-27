@@ -2,9 +2,9 @@
 
 <%= form_for Photo.new do |f| %>
   <div>
-    <%= f.label :filepicker_url, "Upload Some Pics:" %>
-    
-    <%= f.filepicker_field :filepicker_url %>
+    <%= f.label :url, "Upload Some Pics:" %>
+
+    <%= f.filepicker_field :url %>
   </div>
 
   <%= f.submit %>
