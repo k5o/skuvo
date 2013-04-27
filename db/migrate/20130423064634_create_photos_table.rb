@@ -4,6 +4,7 @@ class CreatePhotosTable < ActiveRecord::Migration
       t.string :url
       t.string :short_url
       t.references :user
+      t.timestamps
     end
   end
 end

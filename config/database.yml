@@ -1,11 +1,11 @@
 development:
   adapter: postgresql
-  database: time_auction_development
+  database: skuvo_development
   pool: 5
   timeout: 5000
 
 test:
   adapter: postgresql
-  database: time_auction_test
+  database: skuvo_test
   pool: 5
   timeout: 5000
