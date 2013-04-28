@@ -7,5 +7,8 @@
   <div>
   	Direct Link: <input style="string" value="http://www.skuvo.com/<%= photo.short_url %>" size="30">
 	</div>
+	<div>
+		Download: <%= filepicker_save_button "Download", photo.url, "image/png" %>
+	</div>
   <% end %>
 <% end %>
