@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
-	attr_accessible :filepicker_url
+	attr_accessible :url
 	belongs_to :user
 
 	before_create :create_short_url

@@ -1,10 +1,8 @@
-<%= filepicker_js_include_tag %>
-
 <%= form_for Photo.new do |f| %>
   <div>
     <%= f.label :url, "Upload Some Pics:" %>
 
-    <%= f.filepicker_field :url %>
+    <%= f.filepicker_field :url, multiple: true, dragdrop: true, drag_text: "DRAG HERE YO", drag_class: "big" %>
   </div>
 
   <%= f.submit %>
