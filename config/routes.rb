@@ -2,6 +2,8 @@ Skuvo::Application.routes.draw do
   root :to => "static_pages#index"
   resources :users
   resources :photos
+
+  match ':short_url' => 'photos#go'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

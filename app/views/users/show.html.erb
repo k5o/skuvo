@@ -1,0 +1,8 @@
+<h1>Hey, <%= @user.username %></h1>
+
+<p>Gallery of your images</p>
+<% if @photos %>
+  <% @photos.each do |photo| %>
+    <img src="/<%= photo.short_url %>">
+  <% end %>
+<% end %>
