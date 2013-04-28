@@ -7,9 +7,9 @@ body {
 }
 
 .main_content {
-  width: 300px;
+  width: 30%;
   margin: 0px auto;
-  margin-top: 20%;
+  margin-top: 10%;
 }
 
 h1.main {
@@ -18,7 +18,7 @@ h1.main {
   font-size: 3em;
   margin: 0px;
   text-align: center;
-  /*display: inline-block;*/
+
 }
 
 h2.main {
@@ -26,7 +26,6 @@ h2.main {
   font-family: 'Lato';
   font-weight: 700;
   margin: 0px;
-  /*display: inline-block;*/
 }
 
 .container {
@@ -37,12 +36,12 @@ h2.main {
   border: 1px dotted black;
 }
 
-#drop_zone {
-  position: absolute;
-  left: 1px;
-  top: 1px;
-  width: 99%;
-  height: 99%;
+.drop_zone {
+  position: absolute !important;
+  left: 1px !important;
+  top: 1px !important;
+  width: 99% !important;
+  height: 99% !important;
 }
 
 #logo {

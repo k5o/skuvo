@@ -1,38 +1,39 @@
 // $(document).ready(function(){
-//   $('.loader').hide();
-//   $('.submit_button').hide();
+// 	$('.drop_zone').hide();
+//   // $('.loader').hide();
+//   // $('.submit_button').hide();
 
-//   // // File Upload
+//   // // // File Upload
 
-//   var formElement = document.getElementById("form");
-//   var newFormData = new FormData(formElement);
+//   // var formElement = document.getElementById("form");
+//   // var newFormData = new FormData(formElement);
   
 
-//   $('form').submit(function(e){
-//     e.preventDefault();
-//     console.log(window.files);
-//     console.log(window.files[0]);
-//     newFormData.append('photo', window.files[0]);
+//   // $('form').submit(function(e){
+//   //   e.preventDefault();
+//   //   console.log(window.files);
+//   //   console.log(window.files[0]);
+//   //   newFormData.append('photo', window.files[0]);
     
-//     $.ajax({
-//       type: 'post',
-//       url: '/',
-//       data: newFormData,
-//       processData: false,
-//       success: function() {
-//         console.log('success');
-//       },
-//       error: function(xhr, status, error) {
-//         console.log(status);
-//         console.log(error);
-//       }
-//     }).done(function(data){
-//       $('.loader').show();
-//       $('#drop_zone').css("opacity", '0.3');
-//     }).fail(function(){
-//       console.log("FAIL");
-//     })
-//   });
+//   //   $.ajax({
+//   //     type: 'post',
+//   //     url: '/',
+//   //     data: newFormData,
+//   //     processData: false,
+//   //     success: function() {
+//   //       console.log('success');
+//   //     },
+//   //     error: function(xhr, status, error) {
+//   //       console.log(status);
+//   //       console.log(error);
+//   //     }
+//   //   }).done(function(data){
+//   //     $('.loader').show();
+//   //     $('.drop_zone').css("opacity", '0.3');
+//   //   }).fail(function(){
+//   //     console.log("FAIL");
+//   //   })
+//   // });
 
 // // Drag and Drop
 //   function handleFileSelect(e) {
@@ -53,7 +54,7 @@
 //     }
 //     document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
 
-//     $('#drop_zone').removeClass('over');
+//     $('.drop_zone').removeClass('over');
 //     $('.submit_button').show();
 //     console.log(window.files)
 
@@ -75,7 +76,7 @@
 //   }
   
 //   function handleDragEnd(e) {
-//     $('#drop_zone').removeClass('over');
+//     $('.drop_zone').removeClass('over');
 //   }
 
 //   var dropZone = document.getElementById('drop_zone');
