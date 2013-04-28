@@ -1,8 +1,9 @@
 class PhotosController < ApplicationController
 	def create
 		@photo = Photo.new(params[:photo])
+		@photo.user_id = 1 #TODO: Remove this hardcode
 		@photo.save
-		redirect_to user_path(current_user)
+		redirect_to user_path(1)
 	end
 
 	def go

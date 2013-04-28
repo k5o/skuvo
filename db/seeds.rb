@@ -1,1 +1,1 @@
-User.create(username: 'The Original', email: 'admin@admin.com', password_digest: 'password')
+User.create(username: 'The Original', email: 'admin@admin.com', password: 'password')

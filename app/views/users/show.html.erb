@@ -3,6 +3,9 @@
 <p>Gallery of your images</p>
 <% if @photos %>
   <% @photos.each do |photo| %>
-    <img src="/<%= photo.short_url %>">
+    <%= link_to filepicker_image_tag(photo.url, width: 300, height: 300, fit: 'crop', alt: "#{@user.username}'s image"), photo.url %>
+  <div>
+  	Direct Link: <input style="string" value="http://www.skuvo.com/<%= photo.short_url %>" size="30">
+	</div>
   <% end %>
 <% end %>
