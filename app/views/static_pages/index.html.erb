@@ -1,9 +1,13 @@
 <%= form_for Photo.new do |f| %>
   <div>
-    <%= f.label :url, "Upload Some Pics:" %>
-
+    <%#= f.label :url, "Upload Some Pics:" %>
     <%= f.filepicker_field :url, multiple: true, dragdrop: true, drag_text: "DRAG HERE YO", drag_class: "big" %>
   </div>
 
   <%= f.submit %>
 <% end %>
+<BR>
+  <BR>
+    Latest issue: Drag and drop file upload doesn't work ("Oops! Had trouble uploading."). No apparent difference from control state (demo)
+<Br>
+    http://stackoverflow.com/questions/14679394/trouble-getting-filepicker-io-drag-drop-pane-working-using-javascript-api
