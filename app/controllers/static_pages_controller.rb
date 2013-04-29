@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
   def index
-  	render :index
+  	@user = User.new
   end
 end

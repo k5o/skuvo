@@ -4,6 +4,8 @@ class CreateUsersTable < ActiveRecord::Migration
   		t.string :username
   		t.string :email
   		t.string :password_digest
+  		t.string :password_salt
+  		t.string :auth_token
   		t.timestamps
   	end
   end

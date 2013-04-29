@@ -1,8 +1,12 @@
 Skuvo::Application.routes.draw do
   root :to => "static_pages#index"
-  resources :users
+  resources :users, :only => [:new, :create, :show]
   resources :photos
+  resources :sessions, :only => [:new, :create, :destroy]
 
+  get 'user/:username' => "users#show", :as => "username"
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
   match ':short_url' => 'photos#go'
   # The priority is based upon order of creation:
   # first created -> highest priority.
