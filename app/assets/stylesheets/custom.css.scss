@@ -19,6 +19,7 @@ html {
 body {
   background-color: #ecf0f1;
   font: normal 62.5% 'Lato',verdana,helvetica,arial,sans-serif;
+  font-weight: 300;
   color: #444;
   height: 100%;
   margin: 0px;
@@ -28,6 +29,8 @@ body {
 .container {
   min-height: 100%;
   padding-bottom: 5em;
+  width: 50%;
+  margin: auto;
 }
 
 @media all and (min-width: 1800px){
@@ -96,5 +99,10 @@ li {
   li {
     list-style: none;
     display: inline;
+    line-height: 3.7em;
+    padding-left: 3%;
+  }
+  a {
+    color: #ecf0f1;
   }
 }

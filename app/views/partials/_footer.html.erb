@@ -2,10 +2,11 @@
 	<div class="footerContent">
 		<% if current_user %>
 		<li><strong><%= link_to "Logout", session_path(current_user), :method => :delete %></strong></li>
-		<li>Profile</li>
-		<li>Upload</li>
+		<li><%= link_to "Profile", username_path(current_user.username) %></li>
+		<li><%= link_to "Upload", root_path %></li>
 		<% end %>
-		<li>About</li>
-		<li>Terms</li>
+		<li><%= link_to "About", '#' %></li>
+		<li><%= link_to "Terms", '#' %></li>
+		<li>© Skuvo 2013</li>
 	</div>
 </div>
