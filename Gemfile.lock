@@ -53,11 +53,15 @@ GEM
     database_cleaner (0.9.1)
     debug_inspector (0.0.2)
     diff-lcs (1.2.4)
+    dotenv (0.7.0)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     filepicker-rails (0.0.2)
       railties (>= 3.1.0, < 5.0)
+    foreman (0.63.0)
+      dotenv (>= 0.7)
+      thor (>= 0.13.6)
     hike (1.2.2)
     i18n (0.6.1)
     journey (1.0.4)
@@ -145,6 +149,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   filepicker-rails
+  foreman
   jquery-rails
   pg
   rails (= 3.2.13)

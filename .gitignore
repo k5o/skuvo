@@ -16,3 +16,4 @@
 /config/initializers/a-codes.yml
 /public/uploads/
 .DS_Store.env
+.env
