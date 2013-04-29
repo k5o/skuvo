@@ -60,7 +60,7 @@ module Skuvo
     config.assets.version = '1.0'
 
     ## For Filepicker
-    if development?
+    unless Rails.env.production?
       filepicker_code = YAML.load(File.read(Rails.root.join('config', 'initializers' ,'a-codes.yml')))
       config.filepicker_rails.api_key = filepicker_code
     end
