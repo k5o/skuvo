@@ -1,92 +1,46 @@
+/*
+CLOUDS: #ecf0f1
+EMERLAND: #2ecc71;
+*/
+html {
+  font-size: 16px;
+  line-height: 20px;
+}
 body {
-  background-image: url('/assets/bg.png');
-  font:14px 'Lato',verdana,helvetica,arial,sans-serif;
-  height:100%;
-  color: #a2a2a2;
-  text-shadow:1px 1px #FFF;
+  /*background-image: url('/assets/bg.png');*/
+  background-color: #ecf0f1;
+  font: normal 62.5% 'Sanchez',verdana,helvetica,arial,sans-serif;
+  color: #444;
 }
 
-.main_content {
-  width: 30%;
-  margin: 0px auto;
-  margin-top: 10%;
+@media all and (min-width: 1800px){
+  body {
+    font-size: 100%
+  }
 }
-
-h1.main {
-  font-family: 'Oleo Script';
-  color: #91C46C;
-  font-size: 3em;
-  margin: 0px;
-  text-align: center;
-
+  
+@media all and (min-width: 1500px) and (max-width: 1799px){
+  body {
+    font-size: 90%
+  }
 }
-
-h2.main {
-  text-align: center;
-  font-family: 'Lato';
-  font-weight: 700;
-  margin: 0px;
+    
+@media all and (min-width: 1100px) and (max-width: 1499px){
+  body {
+    font-size: 80%
+  }
 }
-
+@media all and (min-width: 800px) and (max-width: 1099px){
+  body{
+    font-size: 70%
+  }
+}
 .container {
   clear:both;
   margin: auto;
   width: 960px;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
-}
-
-.drop_zone {
-  position: absolute !important;
-  left: 1px !important;
-  top: 1px !important;
-  width: 99% !important;
-  height: 99% !important;
-}
-
-#logo {
-  float: left;
-  font-family: 'Oleo Script';
-  color: #91C46C;
-  font-size: 3em;
-  margin: 0px;
-  padding: 10px 10px 10px 0px;
-}
-
-#logo a:hover {
-  color: #91C46C;
-}
-
-nav {
-  float: right;
-  width: 960px;
-  margin: 0px auto;
-}
-
-nav a {
-  color: #91C46C;
-
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #C6E070;
-}
-
-.nav li {
-  font-family: 'Lato';
-  font-size: 1.2em;
-  padding: 18px;
-}
-
-.over {
-  border: 3px dashed #000;
-  opacity: 0.2;
-}
-
-#list {
-  padding-left: 200px;
-  padding-right: 200px;
 }
 
 ul {
@@ -101,14 +55,6 @@ li {
 }
 
 ::selection {
-  background-color: #C6E070;
-}
-
-.big {
-background-color: #000 !important;
-  border: 0px !important;
-
-  display: block !important;
-  width: 500px !important;
-  height: 50px !important;
+  background-color: #27ae60;
+  color: #fff;
 }

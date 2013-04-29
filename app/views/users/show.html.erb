@@ -1,4 +1,25 @@
 <h1>Hey, <%= @user.username %></h1>
+<%= form_for Photo.new do |f| %>
+    <div>
+      <%= f.filepicker_field :url,
+          mimetypes: "image/*",
+          button_text: "Select Images",
+          services: "COMPUTER,FACEBOOK,INSTAGRAM,URL",
+          onchange: "
+          $('input[type=submit]').fadeIn(800);
+          var imageData = [];
+          var files = event.fpfiles;
+          for (var i = 0, f; f = files[i]; i++) {
+            imageData.push('<p>Name: ' + f.filename + ', Size: ' + (f.size/1000).toFixed(0) + ' kb</p>');
+          }
+          document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
+          " %>
+    </div>
+    <ul id="imageData">
+    </ul>
+    <%= f.submit "Ok, let's go." %>
+  <% end %>
+
 
 <p>Gallery of your images</p>
 <% if @photos %>
@@ -12,3 +33,9 @@
 	</div>
   <% end %>
 <% end %>
+
+  <script>
+  $(document).ready(function(){
+    $('input[type="submit"]').hide();
+  });
+  </script>

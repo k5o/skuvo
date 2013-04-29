@@ -1,5 +1,5 @@
 <div class="main_content">
-  <h1 class="main">Skuvo</h1>
+  <h1>Skuvo</h1>
   <%= form_for Photo.new do |f| %>
     <div>
       <%= f.filepicker_field :url,
@@ -7,28 +7,28 @@
           button_text: "Select Images",
           services: "COMPUTER,FACEBOOK,INSTAGRAM,URL",
           onchange: "
-          $('input[type=submit]').fadeIn(800);
           var imageData = [];
           var files = event.fpfiles;
           for (var i = 0, f; f = files[i]; i++) {
             imageData.push('<p>Name: ' + f.filename + ', Size: ' + (f.size/1000).toFixed(0) + ' kb</p>');
           }
           document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
+          $('#imageData').fadeIn(800);
+          setTimeout(function() {
+            $('input[type=submit]').fadeIn(800);
+          }, 800);
           " %>
     </div>
-    <ul id="imageData">
-    </ul>
     <%= f.submit "Ok, let's go." %>
   <% end %>
-  <BR>
-    <BR>
-      Latest issue: Drag and drop file upload doesn't work ("Oops! Had trouble uploading."). No apparent difference from control state (demo)
-  <Br>
-      http://stackoverflow.com/questions/14679394/trouble-getting-filepicker-io-drag-drop-pane-working-using-javascript-api
-
+    <ul id="imageData">
+    </ul>
+  
+  
   <script>
   $(document).ready(function(){
     $('input[type="submit"]').hide();
+    $('#imageData').hide();
   });
   </script>
 </div>
