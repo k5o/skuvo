@@ -27,6 +27,7 @@
   </div>
   <% else %>
   <div class="splashSignup">
+    <h2>Sign up in 15 sec</h2>
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="error_messages">
@@ -38,11 +39,13 @@
           </ul>
         </div>
       <% end %>
-      Sign up in 15sec
-      <%= f.text_field :username %>
-      <%= f.text_field :email %>
-      <%= f.password_field :password %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.label :username, 'Username' %>
+      <%= f.text_field :username, :value => "skuvo.com/user/", :id => "domain", :readonly => "readonly" %>
+      <%= f.text_field :username, :placeholder => "yourusername", :autofocus => true, :id => "username" %>
+      <%= f.label :email, 'Email' %><%= f.text_field :email, :placeholder => "you.are@awesome.com" %>
+      
+      <%= f.label :password, 'Password' %><%= f.password_field :password, :placeholder => "Password (min 6 chars)" %>
+      <%= f.label :password_confirmation, 'Confirm Password' %><%= f.password_field :password_confirmation, :placeholder => "Confirm password" %>
       <%= f.submit %>
     <% end %>
   </div>

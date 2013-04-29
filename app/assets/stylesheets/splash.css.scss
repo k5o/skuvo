@@ -7,6 +7,10 @@ DarkLeaf: #7EAA5E;
 */
 
 .mainContent {
+  width: 30%;
+  min-width: 300px;
+  margin: 0px auto;
+  margin-top: 5%;
   h1 {
     font-family: 'Open Sans';
     font-weight: 300;
@@ -15,12 +19,26 @@ DarkLeaf: #7EAA5E;
     margin: 0px;
     text-align: center;
   }
+  h2 {
+    text-align: center;
+  }
+  input[type=submit]{
+    font-family: 'Lato';
+    font-weight: 300;
+    font-size: 2.1em;
+    padding: 4%;
+    background-color: #3498db;
+    color: #ecf0f1;
+    border: 0px;
+    width: 100%;
+    cursor: pointer;
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
 }
 
 .splashUpload {
-  width: 30%;
-  margin: 0px auto;
-  margin-top: 5%;
   button {
     font-family: 'Lato';
     font-weight: 300;
@@ -36,23 +54,47 @@ DarkLeaf: #7EAA5E;
       background-color: #27ae60;
     }
   }
-  input{
-    font-family: 'Lato';
-    font-weight: 300;
-    font-size: 2.1em;
-    padding: 4%;
-    background-color: #3498db;
-    color: #ecf0f1;
-    border: 0px;
-    width: 100%;
-    cursor: pointer;
-    &:hover {
-      background-color: #2980b9;
-    }
-  }
   #imageData {
     padding: 5px;
     letter-spacing: 1px;
+  }
+}
+
+.splashSignup {
+  position: relative;
+  input[type=submit] {
+    width: 99%;
+  }
+  label {
+    font-size: 1.2em;
+    width: 100%;
+    display: inline-block;
+    font-family: 'Open Sans';
+    &#username {
+      text-align: right;
+    }
+  }
+  input[type=text], input[type=password]{
+    font-family: 'Open Sans';
+    padding: 4px;
+    width: 96%;
+    font-size: 1.2em;
+    height: 2em;
+    margin-bottom: 5px;
+    background-color: #F8FDFE;
+    border: 1px solid #ddd;
+  }
+  #domain {
+    display: inline-block;
+    margin-right: 0px;
+    width: 32%;
+    border-right: 0px;
+  }
+  #username {
+    margin-left: -4px !important;
+    border-left: 0px;
+    width: 62%;
+    margin-left: 0px;
   }
 }
 
