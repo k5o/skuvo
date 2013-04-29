@@ -20,6 +20,7 @@ DarkLeaf: #7EAA5E;
     text-align: center;
   }
   h2 {
+    margin-top: 0px;
     text-align: center;
   }
   input[type=submit]{
@@ -81,7 +82,7 @@ DarkLeaf: #7EAA5E;
     font-size: 1.2em;
     height: 2em;
     margin-bottom: 5px;
-    background-color: #F8FDFE;
+    background-color: #fefefe;
     border: 1px solid #ddd;
   }
   #domain {
@@ -98,15 +99,6 @@ DarkLeaf: #7EAA5E;
   }
 }
 
-
-h2.main {
-  text-align: center;
-  font-family: 'Lato';
-  font-weight: 700;
-  margin: 0px;
-
-}
-
 .drop_zone {
   position: absolute !important;
   left: 1px !important;
@@ -118,5 +110,11 @@ h2.main {
 .over {
   border: 3px dashed #000;
   opacity: 0.2;
+}
+
+.error_messages {
+  width: 90%;
+  color: red;
+  margin-bottom: 10px;
 }
 

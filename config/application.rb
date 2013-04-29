@@ -59,7 +59,13 @@ module Skuvo
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    ## For Filepicker
     filepicker_code = YAML.load(File.read(Rails.root.join('config', 'initializers' ,'a-codes.yml')))
     config.filepicker_rails.api_key = filepicker_code
+    
+    ## To get rid of field_with_errors wrappers
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
+     "#{html_tag}".html_safe 
+    }
   end
 end

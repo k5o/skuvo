@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 	before_save :encrypt_password
 	before_create { generate_token(:auth_token) }
 
-	validates :username, :format =>  { :with => /^[a-z0-9_-]$/}
+	validates :username, :format =>  { :with => /^[a-z0-9_-]{3,16}$/}
 	validates :username, :length => { :minimum => 3, :maximum => 16}
 	validates_confirmation_of :password
 	validates_presence_of :password, :on => :create

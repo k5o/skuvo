@@ -1,6 +1,7 @@
 <div class="mainContent">
   <h1>Skuvo</h1>
   <% if current_user %>
+  <h2>Hi, <%= link_to @user.username, user_path(@user) %></h2>
   <div class="splashUpload">
     <%= form_for Photo.new do |f| %>
       <%= f.filepicker_field :url,
@@ -27,11 +28,10 @@
   </div>
   <% else %>
   <div class="splashSignup">
-    <h2>Sign up in 15 sec</h2>
+    <h2>minimalist image hosting</h2>
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="error_messages">
-          <h2>Form is invalid</h2>
           <ul>
             <% for message in @user.errors.full_messages %>
               <li><%= message %></li>
@@ -44,11 +44,12 @@
       <%= f.text_field :username, :placeholder => "yourusername", :autofocus => true, :id => "username" %>
       <%= f.label :email, 'Email' %><%= f.text_field :email, :placeholder => "you.are@awesome.com" %>
       
-      <%= f.label :password, 'Password' %><%= f.password_field :password, :placeholder => "Password (min 6 chars)" %>
-      <%= f.label :password_confirmation, 'Confirm Password' %><%= f.password_field :password_confirmation, :placeholder => "Confirm password" %>
+      <%= f.label :password, 'Password' %><%= f.password_field :password %>
+      <%= f.label :password_confirmation, 'Confirm Password' %><%= f.password_field :password_confirmation %>
       <%= f.submit %>
     <% end %>
   </div>
+  <%= link_to "(or log in)", new_session_path %>
   <% end %>
   
   <script>

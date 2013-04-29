@@ -47,6 +47,14 @@ body {
   }
 }
 
+a {
+  color: #91C46C;
+  text-decoration: none;
+  &:hover {
+    color: #7EAA5E
+  }
+}
+
 ul {
   margin: 0px;
   padding: 0px;

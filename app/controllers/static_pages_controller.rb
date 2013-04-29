@@ -1,5 +1,9 @@
 class StaticPagesController < ApplicationController
   def index
-  	@user = User.new
+  	if current_user
+  		@user = User.find(current_user.id)
+  	else
+  		@user = User.new
+  	end
   end
 end
