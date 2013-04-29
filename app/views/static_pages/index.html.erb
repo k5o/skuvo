@@ -1,7 +1,7 @@
 <div class="mainContent">
   <h1>Skuvo</h1>
   <% if current_user %>
-  <h2>Hi, <%= link_to @user.username, user_path(@user) %></h2>
+  <h2>Hi, <%= link_to @user.username, username_path(@user.username) %></h2>
   <div class="splashUpload">
     <%= form_for Photo.new do |f| %>
       <%= f.filepicker_field :url,
