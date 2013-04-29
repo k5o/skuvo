@@ -23,6 +23,7 @@ DarkLeaf: #7EAA5E;
     margin-top: 0px;
     text-align: center;
     padding-bottom: 2px;
+    font-weight: 300;
   }
   input[type=submit]{
     font-family: 'Lato';
@@ -82,7 +83,7 @@ DarkLeaf: #7EAA5E;
     width: 96%;
     font-size: 1.2em;
     height: 2em;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     background-color: #fefefe;
     border: 1px solid #ddd;
   }
@@ -97,6 +98,9 @@ DarkLeaf: #7EAA5E;
     border-left: 0px;
     width: 62%;
     margin-left: 0px;
+  }
+  p {
+    text-align: right;
   }
 }
 

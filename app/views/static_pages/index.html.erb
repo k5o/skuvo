@@ -1,5 +1,5 @@
 <div class="mainContent">
-  <h1>Skuvo</h1>
+  <h1>skuvo</h1>
   <% if current_user %>
   <h2>Hi, <%= link_to @user.username, username_path(@user.username) %></h2>
   <div class="splashUpload">
@@ -48,8 +48,8 @@
       <%= f.label :password_confirmation, 'Confirm Password' %><%= f.password_field :password_confirmation %>
       <%= f.submit %>
     <% end %>
+    <p><%= link_to "(or log in)", new_session_path %></p>
   </div>
-  <%= link_to "(or log in)", new_session_path %>
   <% end %>
   
   <script>

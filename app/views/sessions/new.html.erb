@@ -1,7 +1,13 @@
-<%= form_tag sessions_path do %>
-	<%= label_tag :email %>
-	<%= text_field_tag :email, params[:email] %>
-	<%= label_tag :password %>
-	<%= password_field_tag :password %>
-	<%= submit_tag %>
-<% end %>
+<div class="mainContent">
+	<div class="splashSignup">
+		<h1>Login</h1>
+		<%= form_tag sessions_path do %>
+			<%= label_tag :email %>
+			<%= text_field_tag :email, params[:email], :autofocus => true %>
+			<%= label_tag :password %>
+			<%= password_field_tag :password %>
+			<%= submit_tag "I'm back" %>
+			<p><%= link_to "I don't have an account yet", root_path %></p>
+		<% end %>
+	</div>
+</div>

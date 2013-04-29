@@ -1,8 +1,10 @@
 <div class="footer">
 	<div class="footerContent">
-		<li><strong>Logout</strong></li>
-		<li>Index</li>
+		<% if current_user %>
+		<li><strong><%= link_to "Logout", session_path(current_user), :method => :delete %></strong></li>
 		<li>Profile</li>
+		<li>Upload</li>
+		<% end %>
 		<li>About</li>
 		<li>Terms</li>
 	</div>
