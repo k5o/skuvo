@@ -12,9 +12,8 @@ class PhotosController < ApplicationController
 	end
 
 	def destroy
-		# @photo = Photo.find(params[:id])
-		# @photo.destroy
-		puts "MOCK DESTROY PHOTO"
+		@photo = Photo.find(params[:id])
+		@photo.destroy
 		render json: {}
 	end
 end

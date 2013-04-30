@@ -1,20 +1,16 @@
 var Photo = {
   init: function() {
-  	$('.photoButtons').on('click', '#delete', this.confirmDelete);    
-  	$('.asdf').click(console.log("oogabooga"));
-    $('.photoButtons').on('ajax:success', '#delete', this.deletePhoto);
-    $('.photoButtons').on('ajax:success', '#delete', this.subtractPhotoCount);
+  	$('.photoButtons').on('click', 'form.button_to', this.confirmDelete);    
+    $('.photoButtons').on('ajax:success', 'form.button_to', this.deletePhoto);
+    $('.photoButtons').on('ajax:success', 'form.button_to', this.subtractPhotoCount);
   },
 
   confirmDelete: function() {
-  	console.log("sanitycheck")
     if (!confirm("Delete this photo?")) return false;
   },
 
   deletePhoto: function() {
-  	console.log("brownies");
-  	debugger
-    $(this).parent().parent().parent().parent('.photoView').hide(800);
+    $(this).parent().parent('.photoView').fadeOut(800);
   },
 
   subtractPhotoCount: function() {
