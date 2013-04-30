@@ -28,7 +28,7 @@
   </div>
   <% else %>
   <div class="splashSignup">
-    <h2>minimalist image hosting</h2>
+    <h2>minimalist image hosting<span id="demoLink"><%= link_to " (demo)", demo_path %></span></h2>
     <%= form_for @user do |f| %>
       <% if @user.errors.any? %>
         <div class="error_messages">

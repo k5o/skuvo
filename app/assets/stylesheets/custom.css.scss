@@ -83,10 +83,10 @@ h2 {
 }
 
 a {
-  color: #91C46C;
+  color: #3498db;
   text-decoration: none;
   &:hover {
-    color: #7EAA5E
+    color: #2980b9;
   }
 }
 
@@ -100,16 +100,14 @@ li {
   list-style: none;
 }
 
-
-
 .footer {
   height: 4em;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  background: #3a3a3a;
-  color: #888;
+  background: #34495e;
+  color: #bdc3c7;
   font-family: 'Open Sans';
   font-weight: 300;
 }
@@ -126,6 +124,9 @@ li {
   }
   a {
     color: #ecf0f1;
+    &:hover {
+      color: #bdc3c7;
+    }
   }
 }
 
