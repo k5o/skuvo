@@ -74,4 +74,15 @@ h1 {
       border-color: #27ae60;
     }
   }
+  img.photo {
+  	border: 1px solid #ddd;
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+         -o-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+  	&:hover {
+  		-webkit-filter: brightness(85%);
+  	};
+	}
 }
