@@ -10,4 +10,11 @@ class PhotosController < ApplicationController
 		@photo = Photo.find_by_short_url(params[:short_url])
 		redirect_to @photo.url, :status => 307
 	end
+
+	def destroy
+		# @photo = Photo.find(params[:id])
+		# @photo.destroy
+		puts "MOCK DESTROY PHOTO"
+		render json: {}
+	end
 end

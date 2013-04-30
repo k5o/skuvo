@@ -1,0 +1,16 @@
+.gallery {
+	width: 100%;
+}
+
+.photoView {
+	margin: auto;
+	float: left;
+	display: inline;
+	min-width: 200px;
+	width: 30%;
+	margin-right: 2%;
+	margin-bottom: 5%;
+	input {
+		width: 160px;
+	}
+}
