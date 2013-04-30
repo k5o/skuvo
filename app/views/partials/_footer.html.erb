@@ -5,12 +5,12 @@
 		<li><%= link_to "Profile", username_path(current_user.username) %></li>
 		<li><%= link_to "Upload", root_path %></li>
 		<% else %>
-		<li><%= link_to "Demo", '#' %></li>
+		<li><%= link_to "Demo", demo_path %></li>
 		<li><%= link_to "Signup", root_path %></li>
 		<li><%= link_to "Login", new_session_path %></li>
 		<% end %>
-		<li><%= link_to "About", '#' %></li>
-		<li><%= link_to "Terms", '#' %></li>
+		<li><%= link_to "About", about_path %></li>
+		<li><%= link_to "Terms", terms_path %></li>
 		<li>© Skuvo 2013</li>
 	</div>
 </div>

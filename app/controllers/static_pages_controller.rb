@@ -6,4 +6,13 @@ class StaticPagesController < ApplicationController
   		@user = User.new
   	end
   end
+
+  def about
+  end
+
+  def terms
+  end
+
+  def demo
+  end
 end

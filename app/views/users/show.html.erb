@@ -12,7 +12,7 @@
   <div class="photoView">
     <%= link_to filepicker_image_tag(photo.url, width: 200, height: 200, fit: 'crop', alt: "#{@user.username}'s image"), photo.url %>
     <div>
-  	  Link: <span><input style="string" value="http://www.skuvo.com/<%= photo.short_url %>" size="30"></span>
+  	  Link: <span><input style="string" value="http://www.skuvo.com/<%= photo.short_url %>" size="30" readonly="readonly"></span>
 	  </div>
 	  <div class="photoButtons">
         <%= filepicker_save_button image_tag('../assets/glyphicons_200_download.png', id: "download"), photo.url, "image/png" %>

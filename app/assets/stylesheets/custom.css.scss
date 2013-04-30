@@ -33,7 +33,6 @@ body {
   margin: auto;
   padding: auto;
   text-align: center;
-  border: 1px solid red;
   display: block;
 }
 
@@ -91,13 +90,7 @@ ul {
 
 li {
   text-align: left;
-  font:14px 'Lato',verdana,helvetica,arial,sans-serif;
   list-style: none;
-}
-
-::selection {
-  background-color: #27ae60;
-  color: #fff;
 }
 
 .footer {
@@ -126,4 +119,9 @@ li {
   a {
     color: #ecf0f1;
   }
+}
+
+::selection {
+  background-color: #27ae60;
+  color: #fff;
 }
