@@ -38,6 +38,7 @@ body {
 .container {
   padding-bottom: 4em;
   width: 50%;
+  min-width: 320px;
   margin: 0 auto;
   display: block;
   border: 1px solid transparent; /* For some reason this border is needed for the sticky footer */
@@ -114,6 +115,7 @@ li {
 
 .footerContent {
   width: 50%;
+  min-width: 320px;
   margin: auto;
   text-align: center;
   li {
