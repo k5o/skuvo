@@ -1,5 +1,0 @@
-<% if @photo.new_record? %>
-  alert("Failed to upload painting: <%= j @painting.errors.full_messages.join(', ').html_safe %>");
-<% else %>
-  $("body").append("<%= escape_javascript(render @photo) %>")
-<% end %>

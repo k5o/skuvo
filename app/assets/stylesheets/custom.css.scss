@@ -31,6 +31,10 @@ body {
   padding-bottom: 5em;
   width: 50%;
   margin: auto;
+  padding: auto;
+  text-align: center;
+  border: 1px solid red;
+  display: block;
 }
 
 @media all and (min-width: 1800px){
@@ -60,7 +64,7 @@ h1 {
   font-family: 'Open Sans';
   font-weight: 300;
   color: #222;
-  font-size: 4.8em;
+  font-size: 5.6em;
   margin: 0px;
   text-align: center;
 }

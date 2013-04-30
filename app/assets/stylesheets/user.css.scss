@@ -1,9 +1,30 @@
 .gallery {
 	width: 100%;
+	display: block;
 }
 
 .photoButtons {
 	text-align: center;
+}
+
+.photoView#delete, .photoView button, h1 img {
+  padding: 2%;
+  color: #ecf0f1;
+  border: 0px;
+  margin: 0px auto;
+  cursor: pointer;
+}
+
+h1 {
+	img {
+		width: 26px;
+		height: 26px;
+		padding: 1%;
+    background-color: #3498db;
+    &:hover {
+      background-color: #2980b9;
+    }
+	}
 }
 
 .photoView {
@@ -12,21 +33,15 @@
 	display: inline;
 	min-width: 200px;
 	width: 30%;
-	margin-right: 2%;
-	margin-bottom: 5%;
+	margin-left: 1.5%;
+	margin-right: 1.5%;
+	margin-bottom: 3%;
 	input {
 		width: 160px;
     padding: 4px;
     margin-bottom: 2px;
     background-color: #fefefe;
     border: 1px solid #ddd;
-	}
-	#delete, button {
-    padding: 2%;
-    color: #ecf0f1;
-    border: 0px;
-    margin: 0px auto;
-    cursor: pointer;
 	}
 	#delete {
     background-color: #e74c3c;
