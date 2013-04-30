@@ -16,7 +16,7 @@
 	  </div>
 	  <div class="photoButtons">
         <%= filepicker_save_button image_tag('../assets/glyphicons_200_download.png', id: "download"), photo.url, "image/png" %>
-        <%= link_to image_tag('../assets/glyphicons_197_remove.png', id: "delete"), method: "delete", :remote => true %>  
+        <%= link_to image_tag('../assets/glyphicons_197_remove.png', id: "delete"), photo, method: "delete", remote: true %>  
 	  </div>
   </div>
   <% end %>
