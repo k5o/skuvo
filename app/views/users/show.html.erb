@@ -15,11 +15,8 @@
   	  Link: <span><input style="string" value="http://www.skuvo.com/<%= photo.short_url %>" size="30"></span>
 	  </div>
 	  <div class="photoButtons">
-		  <%= filepicker_save_button image_tag('../assets/glyphicons_200_download.png'), photo.url, "image/png" %>
-      <%#= button_to image_tag('../assets/glyphicons_197_remove.png').html_safe, photo, method: "delete", :remote => true, id: "delete" %>
-      <%= button_tag(type: 'submit', method: "delete", :remote => true, id: "delete") do %>
-        <%= image_tag('../assets/glyphicons_197_remove.png') %>
-      <% end %>
+        <%= filepicker_save_button image_tag('../assets/glyphicons_200_download.png', id: "download"), photo.url, "image/png" %>
+        <%= link_to image_tag('../assets/glyphicons_197_remove.png', id: "delete"), method: "delete", :remote => true %>  
 	  </div>
   </div>
   <% end %>

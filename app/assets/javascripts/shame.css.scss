@@ -1,0 +1,9 @@
+/* USER/SHOW: On different zooms/resolutions, the Download/Delete pair
+do not play nicely with each other because they're inherently
+different blocks (DL => button, DEL => anchor). This is a
+temporary hack*/
+.photoView{
+  #download {
+  	margin-top: -1px;
+  }
+}

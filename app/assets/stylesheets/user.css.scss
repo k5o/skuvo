@@ -5,14 +5,17 @@
 
 .photoButtons {
 	text-align: center;
+	max-height: 34px;
 }
 
-.photoView#delete, .photoView button, h1 img {
+.photoView #delete, .photoView button, h1 img {
   padding: 2%;
   color: #ecf0f1;
   border: 0px;
   margin: 0px auto;
   cursor: pointer;
+	width: 26px;
+	height: 26px;
 }
 
 h1 {
@@ -44,16 +47,20 @@ h1 {
     border: 1px solid #ddd;
 	}
 	#delete {
+		display: inline-block;
     background-color: #e74c3c;
     &:hover {
       background-color: #c0392b;
     }
 	}
 	button {
-		margin-top: 5px;
+		border: 1px solid #2ecc71;
+		width: 34px;
+		height: 34px;
     background-color: #2ecc71;
     &:hover {
       background-color: #27ae60;
+      border-color: #27ae60;
     }
   }
 }
