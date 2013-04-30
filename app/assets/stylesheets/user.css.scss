@@ -2,6 +2,10 @@
 	width: 100%;
 }
 
+.photoButtons {
+	text-align: center;
+}
+
 .photoView {
 	margin: auto;
 	float: left;
@@ -12,5 +16,29 @@
 	margin-bottom: 5%;
 	input {
 		width: 160px;
+    padding: 4px;
+    margin-bottom: 2px;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
 	}
+	#delete, button {
+    padding: 2%;
+    color: #ecf0f1;
+    border: 0px;
+    margin: 0px auto;
+    cursor: pointer;
+	}
+	#delete {
+    background-color: #e74c3c;
+    &:hover {
+      background-color: #c0392b;
+    }
+	}
+	button {
+		margin-top: 5px;
+    background-color: #2ecc71;
+    &:hover {
+      background-color: #27ae60;
+    }
+  }
 }

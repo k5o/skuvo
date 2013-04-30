@@ -1,27 +1,11 @@
-<h1>Hey, <%= @user.username %></h1>
-<%= form_for Photo.new do |f| %>
-    <div>
-      <%= f.filepicker_field :url,
-          mimetypes: "image/*",
-          button_text: "Select Images",
-          services: "COMPUTER,FACEBOOK,INSTAGRAM,URL",
-          onchange: "
-          $('input[type=submit]').fadeIn(800);
-          var imageData = [];
-          var files = event.fpfiles;
-          for (var i = 0, f; f = files[i]; i++) {
-            imageData.push('<p>Name: ' + f.filename + ', Size: ' + (f.size/1000).toFixed(0) + ' kb</p>');
-          }
-          document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
-          " %>
-    </div>
-    <ul id="imageData">
-    </ul>
-    <%= f.submit "Ok, let's go." %>
-  <% end %>
+<h1>
+  skuvo<span><%= link_to image_tag('../assets/glyphicons_201_upload.png'), root_path %></span>
+</h1>
+<h2>
+  <%= @user.username %>'s Gallery 
+  (<span id="photosCount"><%= @photos.count %></span>)
+</h2>
 
-
-<p>Gallery of your images (<span id="photosCount"><%= @photos.count %></span>)</p>
 <div class="gallery">
 <% if @photos.any? %>
   <% @photos.each do |photo| %>
@@ -31,8 +15,11 @@
   	  Link: <span><input style="string" value="http://www.skuvo.com/<%= photo.short_url %>" size="30"></span>
 	  </div>
 	  <div class="photoButtons">
-		  <%= filepicker_save_button "Download", photo.url, "image/png" %>
-      <%= button_to "Delete", photo, method: "delete", :remote => true, id: "delete" %>
+		  <%= filepicker_save_button image_tag('../assets/glyphicons_200_download.png'), photo.url, "image/png" %>
+      <%#= button_to image_tag('../assets/glyphicons_197_remove.png').html_safe, photo, method: "delete", :remote => true, id: "delete" %>
+      <%= button_tag(type: 'submit', method: "delete", :remote => true, id: "delete") do %>
+        <%= image_tag('../assets/glyphicons_197_remove.png') %>
+      <% end %>
 	  </div>
   </div>
   <% end %>
