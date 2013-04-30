@@ -10,14 +10,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="wrapper">
 
-<div class="container">
-	<%= yield %>
-</div>
+	<div class="container">
+		<%= yield %>
+	</div>
 
-<%= render 'partials/footer' %>
+	<%= render 'partials/footer' %>
 
-<script type="text/javascript">filepicker.setKey('AWbWJDU7S82YMEcTRnbFwz')</script>
+	<script type="text/javascript">filepicker.setKey('AWbWJDU7S82YMEcTRnbFwz')</script>
   <script src="https://api.filepicker.io/v1/filepicker_debug.js"></script>
+</div>
 </body>
 </html>
