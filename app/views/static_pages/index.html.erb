@@ -3,29 +3,38 @@
   <% if current_user %>
   <h2>Hi, <%= link_to @user.username, username_path(@user.username) %></h2>
   <div class="splashUpload">
-    <%= form_for Photo.new do |f| %>
-      <%= f.filepicker_field :url,
-          mimetypes: "image/*",
-          :'data-fp-option-multiple' => "true",
-          button_text: "Select Images",
-          services: "COMPUTER,FACEBOOK,INSTAGRAM,URL",
-          onchange: "
-          var imageData = [];
-          var files = event.fpfiles;
-          for (var i = 0, f; f = files[i]; i++) {
-            imageData.push('<p>Name: ' + f.filename + ', Size: ' + (f.size/1000).toFixed(0) + ' kb</p>');
-          }
-          document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
-          $('#imageData').fadeIn(800);
-          setTimeout(function() {
-            $('input[type=submit]').fadeIn(800);
-          }, 800);
-          " %>
-      <%= f.submit "Upload", id: "upload" %>
-    <% end %>
+    <form accept-charset="UTF-8" action="/photos" class="new_photo" id="new_photo" method="post">
+      <div style="margin:0;padding:0;display:inline">
+        <input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Wl+n/0UuyTyj1NWYF1uG4ZbB6f6E3MrWDW1Nvw6m3e0=" />
+      </div>
+      
+      <input data-fp-apikey="AWbWJDU7S82YMEcTRnbFwz" 
+             data-fp-button-text="Select Images" 
+             data-fp-drag-text="Or drop files here" 
+             data-fp-mimetypes="image/*" 
+             data-fp-option-multiple="true" 
+             data-fp-option-services="COMPUTER,FACEBOOK,INSTAGRAM,URL" 
+             id="photo_url" name="photo[url]" 
+             onchange="
+                var imageData = [];
+                var files = event.fpfiles;
+                imageData.push('<p>' + files.length + ' file(s) to upload:</p>');
+                for (var i = 0, f; f = files[i]; i++) {
+                  imageData.push('<li>Name: <span class=\'fileDesc\'>' + f.filename + '</span></li><p> Size: <span class=\'fileDesc\'>' + (f.size/1000).toFixed(0) + ' kb</span></p>');
+                }
+                document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
+                $('#imageData').fadeIn(800);
+                setTimeout(function() {
+                  $('input[type=submit]').fadeIn(400);
+                }, 800);
+                " 
+              size="30" 
+              type="filepicker" />
+      <input id="upload" name="commit" type="submit" value="Upload" />
+    </form>    
     
-    <ul id="imageData">
-    </ul>
+    <div id="imageData">
+    </div>
   </div>
   <% else %>
   <div class="splashSignup">

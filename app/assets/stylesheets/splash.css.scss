@@ -46,6 +46,19 @@ DarkLeaf: #7EAA5E;
     padding: 5px;
     letter-spacing: 1px;
     font-family: 'Sanchez';
+    ul {
+      padding-left: 18px;
+    }
+    li {
+      list-style: decimal;
+    }
+    p {
+      padding-bottom: 10px;
+    }
+    .fileDesc {
+      font-family: 'Open Sans';
+      font-weight: 300;
+    }
   }
 }
 
