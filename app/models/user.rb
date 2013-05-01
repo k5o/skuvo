@@ -4,14 +4,20 @@ class User < ActiveRecord::Base
 	has_many :photos
 	before_save :encrypt_password
 	before_create { generate_token(:auth_token) }
+	before_create :downcase_username
 
-	validates :username, :format =>  { :with => /^[a-z0-9_-]{3,16}$/}
+	EMAIL_REGEXP = /^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
+	USERNAME_REGEXP = /^[a-zA-Z0-9_-]{3,16}$/
+	
+	validates_presence_of :username
+	validates :username, :format =>  { :with => USERNAME_REGEXP }
 	validates :username, :length => { :minimum => 3, :maximum => 16}
 	validates_confirmation_of :password
 	validates_presence_of :password, :on => :create
 	validates :password, :length => { :minimum => 6 }
 	validates_presence_of :email
 	validates_uniqueness_of :username, :email
+	validates :email, :format => { :with => EMAIL_REGEXP }
 
 	def encrypt_password
 		if password.present?
@@ -33,5 +39,9 @@ class User < ActiveRecord::Base
 		begin
 			self[column] = SecureRandom.urlsafe_base64
 		end while User.exists?(column => self[column])
+	end
+
+	def downcase_username
+		self.username = self.username.downcase if self.username.present?
 	end
 end
