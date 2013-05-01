@@ -11,7 +11,7 @@
     <% if @photos.any? %>
       <% @photos.each do |photo| %>
       <div class="photoView">
-        <%= link_to filepicker_image_tag(photo.url, width: 200, height: 200, fit: 'crop', :class => "photo", alt: "#{@user.username}'s image"), photo.url %>
+        <%= link_to filepicker_image_tag(photo.url, w: 200, h: 200, fit: 'crop', :class => "photo", alt: "#{@user.username}'s image"), photo.url %>
         <div>
       	  Link: <span><input style="string" value="http://www.skuvo.com/<%= photo.short_url %>" size="30" readonly="readonly" onclick="this.select()"></span>
     	  </div>
