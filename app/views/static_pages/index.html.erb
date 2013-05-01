@@ -6,6 +6,7 @@
     <%= form_for Photo.new do |f| %>
       <%= f.filepicker_field :url,
           mimetypes: "image/*",
+          multiple: true,
           button_text: "Select Images",
           services: "COMPUTER,FACEBOOK,INSTAGRAM,URL",
           onchange: "

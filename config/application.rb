@@ -60,12 +60,12 @@ module Skuvo
     config.assets.version = '1.0'
 
     ## For Filepicker
-    if Rails.env.production?
-      config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
-    else
-      filepicker_code = YAML.load(File.read(Rails.root.join('config', 'initializers' ,'a-codes.yml')))
-      config.filepicker_rails.api_key = filepicker_code  
-    end
+    # if Rails.env.production?
+    #   config.filepicker_rails.api_key = ENV['FILEPICKER_API_KEY']
+    # else
+      # filepicker_code = YAML.load(File.read(Rails.root.join('config', 'initializers' ,'a-codes.yml')))
+      # config.filepicker_rails.api_key = filepicker_code  
+    # end
     
     ## To get rid of field_with_errors wrappers
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
