@@ -1,8 +1,12 @@
 class PhotosController < ApplicationController
 	def create
-		@photo = Photo.new(params[:photo])
-		@photo.user_id = current_user.id
-		@photo.save
+		images = params[:photo][:url].split(',')
+		images.each do |image|
+			photo = Photo.new
+			photo.url = image
+			photo.user_id = current_user.id
+			photo.save
+		end
 		redirect_to username_path(current_user.username)
 	end
 
