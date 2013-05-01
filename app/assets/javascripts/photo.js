@@ -6,18 +6,14 @@ var Photo = {
   },
 
   confirmDelete: function() {
-    console.log("A")
     if (!confirm("Delete this photo?")) return false;
   },
 
   deletePhoto: function() {
-    console.log("B")
-    debugger
     $(this).parent().parent('.photoView').fadeOut(800);
   },
 
   subtractPhotoCount: function() {
-    console.log("C")
     newVal = parseInt($('#photosCount').text());
     $('#photosCount').text(newVal - 1);
   }

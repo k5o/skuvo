@@ -6,11 +6,10 @@
     <%= form_for Photo.new do |f| %>
       <%= f.filepicker_field :url,
           mimetypes: "image/*",
-          multiple: true,
+          :'data-fp-option-multiple' => "true",
           button_text: "Select Images",
           services: "COMPUTER,FACEBOOK,INSTAGRAM,URL",
           onchange: "
-          console.log('ooga');
           var imageData = [];
           var files = event.fpfiles;
           for (var i = 0, f; f = files[i]; i++) {
