@@ -16,7 +16,7 @@ gem 'bcrypt-ruby'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-  gem 'filepicker-rails'
+  gem 'filepicker-rails', git: "git://github.com/maxtilford/filepicker-rails.git"
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -34,7 +34,7 @@ group :test do
 	gem 'shoulda-matchers'
 	gem 'capybara'
 	gem 'database_cleaner'
-  gem "factory_girl_rails"
+  gem 'factory_girl_rails'
 end
 
 gem 'jquery-rails'

@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/maxtilford/filepicker-rails.git
+  revision: f38b57eb1567c6bbe784e279d79c89b7b3d482f4
+  specs:
+    filepicker-rails (0.0.1)
+      railties (>= 3.1.0, < 5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -64,8 +71,6 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
-    filepicker-rails (0.0.2)
-      railties (>= 3.1.0, < 5.0)
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
@@ -160,7 +165,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner
   factory_girl_rails
-  filepicker-rails
+  filepicker-rails!
   foreman
   jquery-rails
   pg
