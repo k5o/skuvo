@@ -34,4 +34,6 @@ Skuvo::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.filepicker_rails.api_key = 'AWbWJDU7S82YMEcTRnbFwz'
 end
