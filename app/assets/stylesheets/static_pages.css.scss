@@ -1,4 +1,4 @@
-.about {
+.about, .demo {
 	min-width: 320px;
 	font-family: 'Sanchez';
 	font-size: 1.4em;
@@ -12,6 +12,9 @@
 	li {
 		padding-left: 1.4em;
 	}
+	img {
+		text-align: center;
+	}
 }
 
 .terms {
@@ -23,5 +26,19 @@
 	p {
 		text-align: left;
 		margin-top: 1.4em;
+	}
+}
+
+.demo {
+	p {
+		margin-top: 0px;
+	}
+	img {
+	text-align: center;
+		/*margin: 20px 0px;*/
+		border: 1px solid #ddd;
+	}
+	.photo {
+		margin: auto;
 	}
 }

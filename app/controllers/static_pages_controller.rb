@@ -14,5 +14,6 @@ class StaticPagesController < ApplicationController
   end
 
   def demo
+    @demo_user = User.find(1).username
   end
 end
