@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 	attr_accessible :username, :email, :password, :password_confirmation
 	has_secure_password
-	has_many :photos
+	has_many :photos, :order => 'photos.created_at DESC'
 	before_save :encrypt_password
 	before_create { generate_token(:auth_token) }
 	before_create :downcase_username

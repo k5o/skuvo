@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	def show
 		@user = User.find_by_username(params[:username])
-		@photos = Photo.where(user_id: @user.id)
+		@photos = @user.photos
 	end
 
 	def create
