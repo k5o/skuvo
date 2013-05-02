@@ -23,9 +23,9 @@
             data-fp-url="<%= photo.url %>" 
             name="button" 
             type="submit">
-            <img alt="Glyphicons_200_download" id="download" src="/assets/glyphicons_200_download.png" />
+            <img alt="Glyphicons_200_download" id="download" src="/assets/glyphicons_download.png" />
           </button>
-          <%= link_to image_tag('/assets/glyphicons_197_remove.png', id: "delete"), photo, method: "delete", remote: true %>  
+          <%= link_to image_tag('/assets/glyphicons_remove.png', id: "delete", alt: "Delete Image"), photo, method: "delete", remote: true %>  
     	  </div>
       </div>
       <% end %>
