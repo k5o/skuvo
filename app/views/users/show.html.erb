@@ -17,6 +17,7 @@
         <div>
       	 <span><input style="string" value="http://skuvo.com/<%= photo.short_url %>" size="30" readonly="readonly" onclick="this.select()"></span>
     	  </div>
+        <% if current_user == @user %>
     	  <div class="photoButtons">
           <button data-fp-apikey="AWbWJDU7S82YMEcTRnbFwz" 
             data-fp-mimetype="image/png" 
@@ -27,6 +28,7 @@
           </button>
           <%= link_to image_tag('/assets/glyphicons_remove.png', id: "delete", alt: "Delete Image"), photo, method: "delete", remote: true %>  
     	  </div>
+        <% end %>
       </div>
       <% end %>
     <% else %>
