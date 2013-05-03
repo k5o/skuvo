@@ -9,9 +9,10 @@ class UsersController < ApplicationController
   	if @user.save
   		session[:user_id] = @user.id
   		current_user = @user.id
-    	redirect_to root_url, :notice => "Signed up!"
+  		flash[:notice] = "Signed up"
+    	redirect_to root_url
   	else
-    	render 'static_pages/index'
+    	render :new
   	end
 	end
 

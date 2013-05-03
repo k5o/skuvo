@@ -34,9 +34,14 @@ h1 {
 		width: 26px;
 		height: 26px;
 		padding: 1%;
-    background-color: #3498db;
+    border: 0px !important;
+    -webkit-transition: all 0.1s ease;
+       -moz-transition: all 0.1s ease;
+         -o-transition: all 0.1s ease;
+        -ms-transition: all 0.1s ease;
+            transition: all 0.1s ease;
     &:hover {
-      background-color: #2980b9;
+      -webkit-filter: brightness(110%);
     }
 	}
 }

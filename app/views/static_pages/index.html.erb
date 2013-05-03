@@ -1,6 +1,7 @@
 <div class="mainContent">
   <h1>skuvo</h1>
   <h2>minimalist image hosting</h2>
+  <p class="flash"><%= flash[:notice] %></p>
   <% if current_user %>
     <h2>Hi, <%= link_to @user.username, username_path(@user.username) %></h2>
   <% else %>
