@@ -2,7 +2,7 @@
 	<h1>
   skuvo<span><%= link_to image_tag('/assets/glyphicons_201_upload.png'), root_path %></span>
 	</h1>
-	<p><%= flash[:notice] %></p>
+	<p class="flash"><%= flash[:notice] %></p>
 <a href="<%= @photo.url %>">
 	<img alt="skuvo uploaded image" class="photo" height="300" src="<%= @photo.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
 </a>

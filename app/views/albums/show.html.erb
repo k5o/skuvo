@@ -1,11 +1,11 @@
 <h1>
   skuvo<span><%= link_to image_tag('/assets/glyphicons_201_upload.png'), root_path %></span>
 </h1>
-<p><%= flash[:notice] %></p>
+<p class="flash"><%= flash[:notice] %></p>
 <div id="albumLink">
 	Album Link:
 </div>
-<div class="center">
+<div id="albumUrl">
 	<input style="string" value="http://skuvo.com/a/<%= @album.url %>" size="30" readonly="readonly" onclick="this.select()" class="url">
 </div>
 <div class="gallery">

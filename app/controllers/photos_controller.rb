@@ -18,6 +18,7 @@ class PhotosController < ApplicationController
 				album.photos << photo
 			end
 			album.save
+			flash[:notice] = "Uploaded album as a guest"
 			redirect_to album_url_path(album.url)
 		end
 	end
