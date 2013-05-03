@@ -4,6 +4,7 @@ describe Photo do
   it { should respond_to :url }
   it { should respond_to :short_url }
   it { should belong_to(:user) }
+  it { should belong_to(:album) }
 
   describe "model actions" do
   	it "should create a short url" do
