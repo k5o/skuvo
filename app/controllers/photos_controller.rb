@@ -1,13 +1,28 @@
 class PhotosController < ApplicationController
 	def create
 		images = params[:photo][:url].split(',')
-		images.each do |image|
+		if images.length == 1
 			photo = Photo.new
-			photo.url = image
+			photo.url = images[0]
 			photo.user_id = current_user.id if current_user
 			photo.save
+			redirect_to photo_path(photo.short_url)
+		else
+			album = Album.new
+			images.each do |image|
+				photo = Photo.new
+				photo.url = image
+				photo.user_id = current_user.id if current_user
+				photo.save
+				album << photo
+			end
+			album.save
+			redirect_to album_url_path(album.url)
 		end
-		redirect_to username_path(current_user.username)
+	end
+
+	def show
+		@photo = Photo.find_by_short_url(params[:short_url])
 	end
 
 	def go

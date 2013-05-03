@@ -7,7 +7,8 @@ describe Album do
 
   describe "model actions" do
   	it "should create a url before saving to db" do
-  		album = Album.create
+  		album = Album.new
+  		album.save
   		album.url.should_not be_empty
   	end
   end
