@@ -1,10 +1,10 @@
 <div class="mainContent">
   <h1>skuvo</h1>
-  <h2>minimalist image hosting<span id="demoLink"><%= link_to " (sample)", username_path("panorama") %></span></h2>
+  <h2>minimalist image hosting</h2>
   <% if current_user %>
     <h2>Hi, <%= link_to @user.username, username_path(@user.username) %></h2>
   <% else %>
-    <div class="right"><%= link_to "Signup", signup_path %> or <%= link_to "login", login_path %></div>
+    <div class="right"><%= link_to "signup", signup_path %> | <%= link_to "login", login_path %> | <%= link_to "sample", username_path("panorama") %></div>
   <% end %>
   <div class="splashUpload">
     <form accept-charset="UTF-8" action="/photos" class="new_photo" id="new_photo" method="post">
