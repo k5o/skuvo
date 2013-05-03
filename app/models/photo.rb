@@ -1,6 +1,7 @@
 class Photo < ActiveRecord::Base
 	attr_accessible :url
 	belongs_to :user
+	belongs_to :album
 
 	before_create :create_short_url
 
