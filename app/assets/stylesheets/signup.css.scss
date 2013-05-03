@@ -1,0 +1,47 @@
+.splashSignup {
+  position: relative;
+  input[type=submit] {
+    width: 99%;
+  }
+  label {
+    text-align: left;
+    font-size: 1.2em;
+    width: 100%;
+    display: inline-block;
+    font-family: 'Open Sans';
+    &#username {
+      text-align: right;
+    }
+  }
+  input[type=text], input[type=password]{
+    font-family: 'Open Sans';
+    padding: 4px;
+    width: 96%;
+    font-size: 1.2em;
+    height: 2em;
+    margin-bottom: 10px;
+    background-color: #fefefe;
+    border: 1px solid #ddd;
+  }
+  #domain {
+    display: inline-block;
+    margin-right: 0px;
+    width: 35%;
+    border-right: 0px;
+  }
+  #username {
+    margin-left: -4px !important;
+    border-left: 0px;
+    width: 59%;
+    margin-left: 0px;
+  }
+  p {
+    text-align: right;
+  }
+}
+
+.error_messages {
+  width: 90%;
+  color: red;
+  margin-bottom: 10px;
+}
