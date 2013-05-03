@@ -1,0 +1,24 @@
+<h1>skuvo</h1>
+<div class="splashSignup">
+  <h2>minimalist image hosting<span id="demoLink"><%= link_to " (demo)", demo_path %></span></h2>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+      <div class="error_messages">
+        <ul>
+          <% for message in @user.errors.full_messages %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= f.label :username, 'Username' %>
+    <%= f.text_field :username, :value => "skuvo.com/user/", :id => "domain", :readonly => "readonly" %>
+    <%= f.text_field :username, :placeholder => "yourusername", :id => "username" %>
+    <%= f.label :email, 'Email' %><%= f.text_field :email, :placeholder => "you.are@awesome.com" %>
+    
+    <%= f.label :password, 'Password' %><%= f.password_field :password %>
+    <%= f.label :password_confirmation, 'Confirm Password' %><%= f.password_field :password_confirmation %>
+    <%= f.submit %>
+  <% end %>
+  <p><%= link_to "(or log in)", login_path %></p>
+</div>

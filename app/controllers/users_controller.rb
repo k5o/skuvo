@@ -14,4 +14,7 @@ class UsersController < ApplicationController
     	render 'static_pages/index'
   	end
 	end
+
+	def new
+	end
 end

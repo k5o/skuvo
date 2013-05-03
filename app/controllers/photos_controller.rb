@@ -6,6 +6,7 @@ class PhotosController < ApplicationController
 			photo.url = images[0]
 			photo.user_id = current_user.id if current_user
 			photo.save
+			flash[:notice] = "Uploaded photo as a guest"
 			redirect_to photo_path(photo.short_url)
 		else
 			album = Album.new
@@ -14,7 +15,7 @@ class PhotosController < ApplicationController
 				photo.url = image
 				photo.user_id = current_user.id if current_user
 				photo.save
-				album << photo
+				album.photos << photo
 			end
 			album.save
 			redirect_to album_url_path(album.url)

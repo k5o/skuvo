@@ -1,6 +1,5 @@
 .photoShow {
 	text-align: center;
-	margin-top: 10%;
 	img {
 		border: 1px solid #ddd;
 	}
@@ -8,9 +7,21 @@
 		max-width: 400px !important; /* Overrides the input css in user.css.scss */
 		background-color: #ecf0f1 !important;
 	}
-	p {
-		margin-top: 10px;
-		font-family: 'Sanchez';
-		font-size: 1.2em;
-	}
+}
+
+.photoShow p, #albumText {
+	margin: 10px;
+	font-family: 'Sanchez';
+	font-size: 1.2em;
+}
+
+#albumLink {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.url {
+	max-width: 180px !important; /* Overrides the input css in user.css.scss */
+	background-color: #ecf0f1 !important;
+	font-size: 1.4em !important;
 }
