@@ -1,4 +1,16 @@
 .photoShow {
 	text-align: center;
 	margin-top: 10%;
+	img {
+		border: 1px solid #ddd;
+	}
+	input {
+		max-width: 400px !important; /* Overrides the input css in user.css.scss */
+		background-color: #ecf0f1 !important;
+	}
+	p {
+		margin-top: 10px;
+		font-family: 'Sanchez';
+		font-size: 1.2em;
+	}
 }

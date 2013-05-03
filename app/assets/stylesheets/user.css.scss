@@ -41,6 +41,20 @@ h1 {
 	}
 }
 
+.photoView input, .photoShow input {
+  font-family: 'Roboto Condensed';
+  font-weight: 300;
+  color: #888;
+  font-size: 1.1em;
+  cursor: text;
+  width: 100%;
+  max-width: 198px;
+  margin-bottom: 2px;
+  background-color: #fff;
+  border: 0px;
+  text-align: center;
+}
+
 .photoView {
 	display: inline-block;
 	width: 200px;
@@ -49,19 +63,6 @@ h1 {
 	margin-bottom: 3%;
   border: 1px solid #ddd;
   background-color: #fff;
-	input {
-		font-family: 'Roboto Condensed';
-    font-weight: 300;
-    color: #888;
-    font-size: 1.1em;
-		cursor: text;
-		width: 100%;
-    max-width: 198px;
-    margin-bottom: 2px;
-    background-color: #fff;
-    border: 0px;
-    text-align: center;
-	}
 	#delete {
 		display: inline-block;
     background-color: #fff;
