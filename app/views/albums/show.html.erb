@@ -20,11 +20,12 @@
 			</div>
 		</div>
 		<% end %>
-
+		<p id="albumText">
 		<% if !current_user %>
-			<p id="albumText"><%= link_to "Signup to save your images", signup_path %></p>
+			<%= link_to "Signup to save your images", signup_path %>
 		<% else %>
 			<%= link_to "Return to profile page", username_path(current_user.username) %>
 		<% end %>
+		</p>
 	</div>
 </div>
