@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	before_create { generate_token(:auth_token) }
 	before_create :downcase_username
 
-	EMAIL_REGEXP = /^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
+	EMAIL_REGEXP = /^([0-9a-zA-Z]([-\.\w+]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
 	USERNAME_REGEXP = /^[a-zA-Z0-9_-]{3,16}$/
 	
 	validates_presence_of :username

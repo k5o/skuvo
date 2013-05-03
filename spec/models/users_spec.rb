@@ -57,6 +57,11 @@ describe User do
       user.should be_valid
     end
 
+    it "should accept frank+the@tank.me" do
+      user = FactoryGirl.build(:user, email: "frank+the@tank.me")
+      user.should be_valid
+    end
+
     it "should not accept impossible e-mails" do
       user = FactoryGirl.build(:user, email: "frank@panssarivaunu.fi..nland")
       user.should_not be_valid
