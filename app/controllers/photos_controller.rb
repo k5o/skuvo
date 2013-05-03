@@ -4,7 +4,7 @@ class PhotosController < ApplicationController
 		images.each do |image|
 			photo = Photo.new
 			photo.url = image
-			photo.user_id = current_user.id
+			photo.user_id = current_user.id if current_user
 			photo.save
 		end
 		redirect_to username_path(current_user.username)
