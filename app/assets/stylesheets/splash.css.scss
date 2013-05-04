@@ -2,8 +2,6 @@
 CLOUDS: #ecf0f1
 EMERLAND: #2ecc71;
 NEPHRITIS: #27ae60;
-Leaf: #91C46C
-DarkLeaf: #7EAA5E;
 */
 
 .mainContent {
@@ -21,6 +19,11 @@ DarkLeaf: #7EAA5E;
     border: 0px;
     width: 100%;
     cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+         -o-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
     &:hover {
       background-color: #2980b9;
     }
@@ -38,6 +41,11 @@ DarkLeaf: #7EAA5E;
     border: 0px;
     width: 100%;
     cursor: pointer;
+    -webkit-transition: all 0.2s ease;
+       -moz-transition: all 0.2s ease;
+         -o-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
     &:hover {
       background-color: #27ae60;
     }

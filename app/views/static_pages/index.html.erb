@@ -28,10 +28,10 @@
                   imageData.push('<li>Name: <span class=\'fileDesc\'>' + f.filename + '</span></li><p> Size: <span class=\'fileDesc\'>' + (f.size/1000).toFixed(0) + ' kb</span></p>');
                 }
                 document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
-                $('#imageData').fadeIn(800);
+                $('#imageData').fadeIn(600);
                 setTimeout(function() {
-                  $('input[type=submit]').fadeIn(400);
-                }, 800);
+                  $('input[type=submit]').fadeIn(200);
+                }, 400);
                 " 
               size="30" 
               type="filepicker" />
