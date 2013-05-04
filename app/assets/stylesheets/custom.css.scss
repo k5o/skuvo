@@ -3,7 +3,7 @@ margin: 0;
 }
 
 html {
-  font-size: 16px;
+  font-size: 16;
   line-height: 20px;
   height: 100%;
   margin: 0;
@@ -137,4 +137,18 @@ li {
 ::selection {
   background-color: #3498db;
   color: #fff;
+}
+
+/* Specific Mozilla Support */
+
+@-moz-document url-prefix() { 
+  .photoView #tweet img {
+     padding-bottom: 0px !important;
+  }
+
+  .container img, .container button {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
 }
