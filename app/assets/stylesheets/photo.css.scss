@@ -1,12 +1,19 @@
 .photoShow {
 	text-align: center;
-	img {
+	img.photo{
 		border: 1px solid #ddd;
 	}
 	input {
 		max-width: 400px !important; /* Overrides the input css in user.css.scss */
 		background-color: #ecf0f1 !important;
 	}
+	button {
+		background-color: transparent;
+		border: 0px;
+		margin: 0px auto;
+		cursor: pointer;
+    padding: 3px 3px 4px 3px;
+  }
 }
 
 .photoShow p, .photoShow a, #albumText, .flash {
@@ -19,11 +26,6 @@
 .photoShow #uploader a {
 	margin: 0px;
 }
-
-.photoButtons #tweeter img {
-		max-width: 25px;
-		border: 0px;
-	}
 
 #albumLink {
 	margin-top: 10px;
