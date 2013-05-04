@@ -30,8 +30,8 @@ describe "UserSignups" do
       subject { page }
 
       before do
-        fill_in 'username', with: "Test Name"
-        fill_in 'email', with: "j@example.com"
+        fill_in 'username', with: "frankthetank"
+        fill_in 'email', with: "frank@thetank.com"
       end
 
       it "should not create user" do
