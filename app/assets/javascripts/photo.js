@@ -1,8 +1,8 @@
 var Photo = {
   init: function() {
-  	$('.photoButtons').on('click', 'a', this.confirmDelete);
-    $('.photoButtons').on('ajax:success', 'a', this.deletePhoto);
-    $('.photoButtons').on('ajax:success', 'a', this.subtractPhotoCount);
+  	$('.deleteButton').on('click', 'a', this.confirmDelete);
+    $('.deleteButton').on('ajax:success', 'a', this.deletePhoto);
+    $('.deleteButton').on('ajax:success', 'a', this.subtractPhotoCount);
   },
 
   confirmDelete: function() {
@@ -10,7 +10,7 @@ var Photo = {
   },
 
   deletePhoto: function() {
-    $(this).parent().parent('.photoView').fadeOut(800);
+    $(this).parent().parent().parent('.photoView').fadeOut(800);
   },
 
   subtractPhotoCount: function() {

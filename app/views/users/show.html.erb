@@ -19,6 +19,7 @@
       	 <span><input style="string" value="http://skuvo.com/<%= photo.short_url %>" size="30" readonly="readonly" onclick="this.select()"></span>
     	  </div>
     	  <div class="photoButtons">
+          <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {via: "kokev", url: "http://www.skuvo.com/" + photo.short_url}, {id: 'tweet'}) %>
           <button data-fp-apikey="AWbWJDU7S82YMEcTRnbFwz" 
             data-fp-mimetype="image/png" 
             data-fp-url="<%= photo.url %>" 
@@ -27,7 +28,9 @@
             <img alt="Glyphicons_200_download" id="download" src="/assets/glyphicons_download.png" />
           </button>
         <% if current_user == @user %>
+        <span class="deleteButton">
           <%= link_to image_tag('/assets/glyphicons_remove.png', id: "delete", alt: "Delete Image"), photo, method: "delete", remote: true %>  
+        </span>          
         <% end %>
     	  </div>
       </div>
@@ -36,4 +39,5 @@
       No uploaded images yet.
     <% end %>
   </div>
+  <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {via: "kokev"}) %>
 </div>
