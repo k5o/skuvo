@@ -17,7 +17,7 @@
 }
 
 .photoShow p, .photoShow a, #albumText, .flash {
-	text-align: center;
+	text-align: center !important; /* Overrides specifically for flash */
 	margin: 10px;
 	font-family: 'Sanchez';
 	font-size: 1.3em;

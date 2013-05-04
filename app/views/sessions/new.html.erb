@@ -1,6 +1,8 @@
+<% provide(:title, ' - ' + 'login') %>
 <div class="mainContent">
 	<div class="splashSignup">
 		<h1>Login</h1>
+		<p class="flash"><%= flash[:error] %></p>
 		<%= form_tag sessions_path do %>
 			<%= label_tag :email %>
 			<%= text_field_tag :email, params[:email], :autofocus => true %>
