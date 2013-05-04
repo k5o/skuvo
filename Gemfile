@@ -3,7 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'foreman'
 gem 'thin'
-gem 'tweet-button', git: 'https://github.com/intridea/tweet-button'
+gem 'tweet-button'
+gem 'newrelic_rpm'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
