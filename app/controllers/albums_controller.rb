@@ -4,4 +4,11 @@ class AlbumsController < ApplicationController
 		@photos = @album.photos
 		@user = @album.user
 	end
+
+	def destroy
+		@album = Album.find(params[:id])
+		@user = @album.user
+		@album.destroy
+		redirect_to username_path(@user.username)
+	end
 end

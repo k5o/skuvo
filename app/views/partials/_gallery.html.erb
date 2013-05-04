@@ -1,0 +1,42 @@
+<div class="gallery">
+  <div class="innerContainer">
+    <% if @photos.any? %>
+      <% @photos.each do |photo| %>
+      <div class="photoView">
+        <a href="<%= photo.url %>">
+          <img alt="skuvo uploaded image" class="photo" height="200" src="<%= photo.url %>/convert?fit=crop&amp;height=200&amp;width=200" width="200" />
+        </a>
+        <div>
+          <input style="string" value="http://skuvo.com/<%= photo.short_url %>" size="30" readonly="readonly" onclick="this.select()">
+        </div>
+        <div class="photoButtons">
+            <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/i/" + photo.short_url, text: "Check out this skuvo-uploaded image:"}, {id: 'tweet'}) %>
+            <button data-fp-apikey="AWbWJDU7S82YMEcTRnbFwz" 
+              data-fp-mimetype="image/png" 
+              data-fp-url="<%= photo.url %>" 
+              name="button" 
+              type="submit">
+              <img alt="Glyphicons_200_download" id="download" src="/assets/glyphicons_download.png" />
+            </button>
+          <% if current_user == @user %>
+          <span class="deleteButton">
+            <%= link_to image_tag('/assets/glyphicons_remove.png', id: "delete", alt: "Delete Image"), photo, method: "delete", remote: true %>  
+          </span>          
+          <% end %>
+          </div>
+      </div>
+      <% end %>
+    <% else %>
+      <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
+    <% end %>
+    <% if @album %>
+    <p id="albumText">
+      <% if !current_user %>
+        <p><%= link_to "Signup to save your images", signup_path %></p>
+      <% else %>
+        <%= link_to "Return to " + @user.username + "'s gallery", username_path(@user.username) %>
+      <% end %>
+    </p>
+    <% end %>
+  </div>
+</div>

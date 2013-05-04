@@ -3,7 +3,7 @@ Skuvo::Application.routes.draw do
   resources :users, :only => [:new, :create, :show]
   resources :photos, :only => [:create, :destroy]
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :albums, :only => [:show]
+  resources :albums, :only => [:show, :destroy]
 
   
   get 'user/:username' => "users#show", :as => "username"

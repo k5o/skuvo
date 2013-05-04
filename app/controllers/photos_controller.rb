@@ -26,6 +26,7 @@ class PhotosController < ApplicationController
 
 	def show
 		@photo = Photo.find_by_short_url(params[:short_url])
+		@user = @photo.user if @photo.user
 	end
 
 	def go
