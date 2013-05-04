@@ -114,3 +114,15 @@ h1 {
   	};
 	}
 }
+
+@-moz-document url-prefix() { 
+  .photoView #tweet img {
+     padding-bottom: 0px;
+  }
+
+  .container img, .container button {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
