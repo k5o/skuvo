@@ -8,6 +8,9 @@
 <div id="albumUrl">
 	<input style="string" value="http://skuvo.com/a/<%= @album.url %>" size="30" readonly="readonly" onclick="this.select()" class="url">
 </div>
+<div class="photoButtons">
+	  <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + @album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet'}) %>
+	</div>
 <div class="gallery">
   <div class="innerContainer">
 		<% @photos.each do |photo| %>
