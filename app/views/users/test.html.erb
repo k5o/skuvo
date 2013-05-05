@@ -2,7 +2,6 @@
 <h1>
   skuvo<span><%= link_to image_tag('/assets/glyphicons_upload.png'), root_path %></span>
 </h1>
-<% if current_user == @user %>
   <h2>
     Your Gallery 
   </h2>
@@ -10,11 +9,6 @@
   <li class="active"><a href="#allimages">All Images (<span id="photosCount"><%= @photos.count %></span>)</a></li>
   <li><a href="#albums">Albums (<span id="albumsCount"><%= @albums.count %></span>)</a></li>
 </ul> 
-<% else %>
-  <h2>
-    <%= @user.username %>'s Gallery (<span id="photosCount"><%= @photos.count %></span>)
-  </h2>
-<% end %>
 
 <div class="gallery">
   <div class="tab">
