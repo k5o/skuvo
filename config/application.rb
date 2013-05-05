@@ -59,7 +59,7 @@ module Skuvo
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    ## Heroku is running errors on asset precompilation, thus we are using
+    ## Heroku is running errors on asset precompilation, thus we are using:
     # config.assets.initialize_on_precompile = false
 
     ## To get rid of field_with_errors wrappers
