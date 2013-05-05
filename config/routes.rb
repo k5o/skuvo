@@ -14,5 +14,6 @@ Skuvo::Application.routes.draw do
   get "about" => "static_pages#about", :as => "about"
   get "terms" => "static_pages#terms", :as => "terms"
   get "demo" => "static_pages#demo", :as => "demo"
+  get "stagingarea" => "users#test", :as => "stagingarea"
   match ':short_url' => 'photos#go'
 end
