@@ -48,26 +48,27 @@
       <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
     <% end %>
   </div> 
-  <% if @albums && @albums.any? %>
-    <div class="tab" style="display:none">
-      <div class="photoShow" id="albums">
-        <%= @albums.inspect %>
+  <div class="tab" style="display:none">
+    <div class="photoShow" id="albums">
+      <% if @albums && @albums.any? %>
+        <%= @albums.inspect %><BR>
+        <BR>
         <% @albums.each do |album| %>
-        <%= album.user_id %>
+          <%= album.user_id %><BR>
+          <BR>
+          <%= album.url %>  
           <div class="photoButtons">
             <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet'}) %>
             <% if current_user == @user %>
               <%= link_to image_tag('/assets/glyphicons_remove.png', alt: "Delete Image"), album, method: "delete", confirm: "Delete album? This will not delete its included images." %> 
             <% end %>
           </div>
-        <% end %>  
-      </div>
-  <% elsif @albums.blank? && !@album && current_user == @user %>
-    No albums created. Albums are automatically created when  you upload more than 1 image at a time.
-  <% elsif @albums.blank? && !@album && current_user == @user %>
-    No albums created. Albums are automatically created when  you upload more than 1 image at a time.
-  <% end %> 
-   </div>
+        <% end %>    
+    <% elsif @albums.blank? && !@album && current_user == @user %>
+      No albums created. Albums are automatically created when you upload more than 1 image at a time.
+    <% end %> 
+  </div>
+</div>
   
   <% if @album %>
     <p id="albumText">
