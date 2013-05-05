@@ -9,10 +9,10 @@
 	<input style="string" value="http://skuvo.com/a/<%= @album.url %>" size="30" readonly="readonly" onclick="this.select()" class="url">
 </div>
 <div class="photoButtons">
-	  <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + @album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet'}) %>
-	  <% if current_user == @user %>
-      <%= link_to image_tag('/assets/glyphicons_remove.png', alt: "Delete Image"), @album, method: "delete", confirm: "Delete album? This will not delete its included images." %>  
-    <% end %>
-	</div>
+  <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + @album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet',}) %>
+  <% if current_user == @user %>
+    <%= link_to image_tag('/assets/glyphicons_remove.png', alt: "Delete Image"), @album, method: "delete", confirm: "Delete album? This will not delete its included images." %>  
+  <% end %>
+</div>
 
 <%= render 'partials/gallery' %>

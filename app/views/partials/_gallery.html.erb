@@ -30,7 +30,7 @@
       <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
     <% end %>
   </div> 
-  <% if @albums %>
+  <% if @albums && @albums.any? %>
     <div class="tab" style="display:none">
       <div class="photoShow" id="albums">
         <% @albums.each do |album| %>
@@ -55,10 +55,10 @@
   
   <% if @album %>
     <p id="albumText">
-      <% if !current_user %>
+      <% if !current_user || current_user != @user %>
         <%= link_to "Signup to save your images", signup_path %>
       <% else %>
-        <%= link_to "Return to " + @user.username + "'s gallery", username_path(@user.username) %>
+        <%= link_to "Return to " + @user.username + "'s gallery", username_path(@user.username) if @user %>
       <% end %>
     </p>
   <% end %>
