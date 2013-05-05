@@ -5,12 +5,32 @@
 	text-align: center;
 }
 
-.innerContainer {
-  width: 100%; 
-  height: auto;
+.tabs {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  padding-bottom: 8px;
+  font-family: 'Sanchez';
+  font-size: 1.2em;
+  li {
+    display: inline;
+    &.active {
+      font-weight: 400;
+      a {
+        color: #444;
+        cursor: default;
+        &:hover {
+          color: none;
+        }
+      }
+    }
+  }
+}
+
+.tab {
+  min-width: 100%;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  height: auto;
 }
 
 .photoButtons {

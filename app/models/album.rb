@@ -1,6 +1,6 @@
 class Album < ActiveRecord::Base
 	belongs_to :user
-	has_many :photos, :dependent => :destroy
+	has_many :photos
 	before_create :create_url
 
 	def create_url
