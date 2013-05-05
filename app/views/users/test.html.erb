@@ -50,7 +50,7 @@
   </div> 
   <div class="tab" style="display:none">
     <div class="photoShow" id="albums">
-      <% if @albums && @albums.any? %>
+      <% if @albums.any? %>
         <% @albums.each do |foobar| %>
           /a/<%= foobar.url %>
           <a href="/a/<%= foobar.url %>">
@@ -66,8 +66,8 @@
             <% end %>
           </div>
         <% end %>    
-    <% elsif @albums.blank? && !@album && current_user == @user %>
-      No albums created. Albums are automatically created when you upload more than 1 image at a time.
+    <%# elsif @albums.blank? && !@album && current_user == @user %>
+      <!-- No albums created. Albums are automatically created when you upload more than 1 image at a time. -->
     <% end %> 
   </div>
 </div>
