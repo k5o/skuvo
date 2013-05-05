@@ -25,12 +25,12 @@
             <% end %>
           </div>
         </div>
-      <% end %>
-    </div>
-  <% else %>
-    <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
-  <% end %>
-  <% if @albums.any? %>
+      <% end %> 
+    <% else %>
+      <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
+    <% end %>
+  </div> 
+  <% if @albums %>
     <div class="tab" style="display:none">
       <div class="photoShow" id="albums">
         <% @albums.each do |album| %>
@@ -48,18 +48,18 @@
           </div>
         <% end %>  
       </div>
-  <% elsif @albums.blank? && current_user == @user %>
+  <% elsif @albums.blank? && !@album && current_user == @user %>
     No albums created. Albums are automatically created when  you upload more than 1 image at a time.
   <% end %> 
   </div>
   
   <% if @album %>
-  <p id="albumText">
-    <% if !current_user %>
-      <p><%= link_to "Signup to save your images", signup_path %></p>
-    <% else %>
-      <%= link_to "Return to " + @user.username + "'s gallery", username_path(@user.username) %>
-    <% end %>
-  </p>
+    <p id="albumText">
+      <% if !current_user %>
+        <%= link_to "Signup to save your images", signup_path %>
+      <% else %>
+        <%= link_to "Return to " + @user.username + "'s gallery", username_path(@user.username) %>
+      <% end %>
+    </p>
   <% end %>
 </div>
