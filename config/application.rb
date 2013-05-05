@@ -60,7 +60,7 @@ module Skuvo
     config.assets.version = '1.0'
     
     ## Heroku is running errors on asset precompilation, thus we are using
-    config.assets.initialize_on_precompile = false
+    # config.assets.initialize_on_precompile = false
 
     ## To get rid of field_with_errors wrappers
     config.action_view.field_error_proc = Proc.new { |html_tag, instance| 
