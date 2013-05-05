@@ -53,6 +53,7 @@
       <div class="photoShow" id="albums">
         <%= @albums.inspect %>
         <% @albums.each do |album| %>
+        <%= album.user_id %>
           <div class="photoButtons">
             <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet'}) %>
             <% if current_user == @user %>
