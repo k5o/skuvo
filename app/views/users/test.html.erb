@@ -51,9 +51,14 @@
   <div class="tab" style="display:none">
     <div class="photoShow" id="albums">
       <% if @albums && @albums.any? %>
-        <% @albums.each do |album| %>
-          /a/<%= album.url %>
-          
+        <% @photos.each do |photo| %>
+          /a/<%= photo.url %>
+          <a href="/a/<%= photo.url %>">
+            <img alt="skuvo uploaded photo" class="photo" height="300" src="<%= photo.photos.first.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
+          </a>
+          <div>
+            <input style="string" value="http://skuvo.com/a/<%= photo.url %>" size="30" readonly="readonly" onclick="this.select()">
+          </div>  
           <div class="photoButtons">
             <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet'}) %>
             <% if current_user == @user %>
