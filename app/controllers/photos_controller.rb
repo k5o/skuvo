@@ -31,7 +31,7 @@ class PhotosController < ApplicationController
 
 	def go
 		@photo = Photo.find_by_short_url(params[:short_url])
-		redirect_to @photo.url, :status => 307
+		redirect_to @photo.url, :status => 301
 	end
 
 	def destroy
