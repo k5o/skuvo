@@ -33,8 +33,9 @@
   <% if @albums && @albums.any? %>
     <div class="tab" style="display:none">
       <div class="photoShow" id="albums">
+        <%= @albums.inspect %>
         <% @albums.each do |album| %>
-          <a href="/a/<%= album.url %>">
+          <!-- <a href="/a/<%#= album.url %>"> -->
             <img alt="skuvo uploaded album" class="photo" height="300" src="<%= album.photos.first.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
           </a>
           <div>
