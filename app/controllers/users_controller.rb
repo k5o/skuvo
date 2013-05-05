@@ -20,4 +20,10 @@ class UsersController < ApplicationController
 	def new
 		@user = User.new
 	end
+
+	def test
+		@user = User.find_by_username("panorama")
+		@albums = @user.albums
+		@photos = @user.photos
+	end
 end
