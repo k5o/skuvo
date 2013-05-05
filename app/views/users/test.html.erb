@@ -35,9 +35,7 @@
       <div class="photoShow" id="albums">
         <%= @albums.inspect %>
         <% @albums.each do |album| %>
-          <!-- <a href="/a/<%#= album.url %>"> -->
             <img alt="skuvo uploaded album" class="photo" height="300" src="<%= album.photos.first.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
-          </a>
           <div>
             <input style="string" value="http://skuvo.com/a/<%= album.url %>" size="30" readonly="readonly" onclick="this.select()">
           </div>
