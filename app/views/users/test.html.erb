@@ -53,18 +53,18 @@
       <% if @albums.any? %>
         <% @albums.each do |foobar| %>
           /a/<%= foobar.url %> <!-- CONFIRMED TO WORK -->
-          <a href="/a/<%= foobar.url %>">
-            <img alt="skuvo uploaded foobar" class="photo" height="300" src="<%= foobar.photos.first.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
+          <!-- <a href="/a/<%#= foobar.url %>">
+            <img alt="skuvo uploaded foobar" class="photo" height="300" src="<%#= foobar.photos.first.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
           </a>
           <div>
-            <input style="string" value="http://skuvo.com/a/<%= foobar.url %>" size="30" readonly="readonly" onclick="this.select()">
+            <input style="string" value="http://skuvo.com/a/<%#= foobar.url %>" size="30" readonly="readonly" onclick="this.select()">
           </div>  
           <div class="photoButtons">
-            <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + foobar.url, text: "Check out this skuvo-uploaded foobar:"}, {id: 'tweet'}) %>
-            <% if current_user == @user %>
-              <%= link_to image_tag('/assets/glyphicons_remove.png', alt: "Delete Image"), foobar, method: "delete", confirm: "Delete foobar? This will not delete its included images." %> 
-            <% end %>
-          </div>
+            <%#= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + foobar.url, text: "Check out this skuvo-uploaded foobar:"}, {id: 'tweet'}) %>
+            <%# if current_user == @user %>
+              <%#= link_to image_tag('/assets/glyphicons_remove.png', alt: "Delete Image"), foobar, method: "delete", confirm: "Delete foobar? This will not delete its included images." %> 
+            <%# end %>
+          </div> -->
         <% end %>    
     <% elsif @albums.blank? && !@album && current_user == @user %>
       No albums created. Albums are automatically created when you upload more than 1 image at a time.
