@@ -30,7 +30,7 @@
       <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
     <% end %>
   </div> 
-  <% if @albums && @albums.any? %>
+  <% if @albums %>
     <div class="tab" style="display:none">
       <div class="photoShow" id="albums">
         <% if @albums.any? %>
@@ -48,13 +48,13 @@
               <% end %>
             </div>
           <% end %>    
-        <% elsif @albums.blank? && !@album && current_user == @user %>
+        <% else %>
           No albums created. Albums are automatically created when you upload more than 1 image at a time.
         <% end %> 
       </div>
     </div>
   <% end %>
-  
+
   <% if @album %>
     <p id="albumText">
       <% if !current_user || current_user != @user %>
