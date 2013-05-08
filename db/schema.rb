@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503082913) do
+ActiveRecord::Schema.define(:version => 20130508222453) do
 
   create_table "albums", :force => true do |t|
     t.string   "url"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(:version => 20130503082913) do
     t.datetime "updated_at", :null => false
     t.integer  "album_id"
   end
+
+  add_index "photos", ["user_id"], :name => "index_photos_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username"
