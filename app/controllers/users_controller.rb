@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find_by_username(params[:username])
 		@albums = @user.albums
-		@photos = @user.photos
+		@photos = @user.photos.paginate(page: params[:page], :per_page => 9)
 	end
 
 	def create

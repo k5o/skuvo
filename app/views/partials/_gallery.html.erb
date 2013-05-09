@@ -26,6 +26,7 @@
           </div>
         </div>
       <% end %> 
+      <%= will_paginate @photos %>
     <% else %>
       <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
     <% end %>

@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
 	def show
 		@album = Album.find_by_url(params[:url])
-		@photos = @album.photos
+		@photos = @user.photos.paginate(page: params[:page], :per_page => 9)
 		@user = @album.user
 	end
 
