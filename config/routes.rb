@@ -13,6 +13,5 @@ Skuvo::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"
   get "about" => "static_pages#about", :as => "about"
   get "terms" => "static_pages#terms", :as => "terms"
-  get "demo" => "static_pages#demo", :as => "demo"
   match ':short_url' => 'photos#go'
 end

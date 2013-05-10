@@ -11,5 +11,16 @@ describe Album do
   		album.save
   		album.url.should_not be_empty
   	end
+
+    # it "shouldn't create duplicate urls" do
+    #   album1 = Album.new
+    #   album1.url = "aaaa"
+    #   album1.save!
+    #   album2 = Album.new
+    #   album2.save!
+    #   album2.url = "aaaa"
+    #   album2.save!
+    #   album2.url.should eq "aaaa"
+    # end
   end
- end
+end
