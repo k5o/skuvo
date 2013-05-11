@@ -2,16 +2,17 @@
   <div class="tab" id="photosGalleria">
     <% if @photos.any? %>
       <%= render @photos %>
+      <% if @photos.any? && @photos.total_pages >= 2 %>
+        <div id="showMoreDiv">
+          <%= link_to 'Show more images', username_path(@user.username, :page => (@photos.current_page + 1)), :remote => true, :id => 'showMoreLink' %>
+        </div>
+      <% end %>
     <% else %>
       <strong><%= @album ? "Album is empty" : "No uploaded images yet" %></strong>
     <% end %>
   </div>
   
-  <% if @photos.any? && @photos.total_pages >= 2 %>
-  <div id="showMoreDiv">
-    <%= link_to 'Load more images', username_path(@user.username, :page => (@photos.current_page + 1)), :remote => true, :id => 'showMoreLink' %>
-  </div>
-  <% end %>
+
 
   <% if @albums %>
     <div class="tab" style="display:none">

@@ -1,4 +1,4 @@
-$("#photosGalleria").append("<%= escape_javascript render(@photos) %>");
+$("#showMoreDiv").prepend("<%= escape_javascript render(@photos) %>");
 
 // Hide link if it is last page otherwise update link
 <% if @photos.total_pages == @photos.current_page %>
