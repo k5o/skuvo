@@ -1,8 +1,8 @@
-$("#showMoreDiv").prepend("<%= escape_javascript render(@photos) %>");
+$("#morePhotos").append("<%= escape_javascript render(@photos) %>");
 
 // Hide link if it is last page otherwise update link
 <% if @photos.total_pages == @photos.current_page %>
-    $("#showMoreLink").hide();
+    $("#showMoreDiv").hide();
 <% else %>
     $("#showMoreLink").attr("href", "<%= username_path(@user.username, :page => (@photos.current_page + 1)) %>");
 <% end %>

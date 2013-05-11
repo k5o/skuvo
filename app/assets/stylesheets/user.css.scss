@@ -135,9 +135,26 @@ h1 {
 
 #showMoreDiv {
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #showMoreLink {
-  font-family: 'Sanchez';
+  width: 200px;
+  display: block;
+  background-color: #fff;
+  border: 1px dotted #ddd;
+  font-family: 'Roboto Condensed';
   font-size: 1.2em;
+  text-align: center;
+  padding: 10px 0px;
+  margin: 0px auto;
+  -webkit-transition: all 0.2s ease;
+     -moz-transition: all 0.2s ease;
+       -o-transition: all 0.2s ease;
+      -ms-transition: all 0.2s ease;
+          transition: all 0.2s ease;
+  &:hover {
+    -webkit-filter: brightness(95%);
+  }
 }
