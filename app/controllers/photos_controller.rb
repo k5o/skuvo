@@ -1,4 +1,4 @@
-class PhotosController < ApplicationController
+class PhotosController < ApplicationController	
 	def create
 		images = params[:photo][:url].split(',')
 		if images.length == 1
@@ -8,7 +8,7 @@ class PhotosController < ApplicationController
 			photo.save
 			flash[:notice] = "Uploaded photo as a guest" if !current_user
 			redirect_to photo_url_path(photo.short_url)
-		else
+		elsif images.length > 1
 			album = Album.new
 			images.each do |image|
 				photo = Photo.new
@@ -21,15 +21,20 @@ class PhotosController < ApplicationController
 			album.save
 			flash[:notice] = "Uploaded album as a guest" if !current_user
 			redirect_to album_url_path(album.url)
+		else
+			flash[:notice] = "Something went wrong. No files were uploaded."
+			redirect_to root_path
 		end
 	end
 
 	def show
+		return no_photo if no_photo?(params[:short_url])
 		@photo = Photo.find_by_short_url(params[:short_url])
 		@user = @photo.user if @photo.user
 	end
 
 	def go
+		return no_photo if no_photo?(params[:short_url])
 		@photo = Photo.find_by_short_url(params[:short_url])
 		redirect_to @photo.url, :status => 301
 	end
