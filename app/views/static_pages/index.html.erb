@@ -15,6 +15,7 @@
       
       <input data-fp-apikey="AWbWJDU7S82YMEcTRnbFwz" 
              data-fp-button-text="Select Images" 
+             data-fp-button-class="selector" 
              data-fp-drag-text="Or drop files here" 
              data-fp-mimetypes="image/*" 
              data-fp-option-multiple="true" 
@@ -42,41 +43,57 @@
     </div>
   </div>
 
+<div id="exampleDropPane">
+</div>
+
+<div id="bassDrop">
+</div>
   
   <script>
   $(document).ready(function(){
     $('input[type="submit"]#upload').hide();
-    $('#imageData').hide();
+    // $('#imageData').hide();
 
-    // filepicker.makeDropPane($('#exampleDropPane')[0], {
+    filepicker.makeDropPane($('#exampleDropPane')[0], {
 
-    // multiple: true,
-    // mimetype: 'image/*',
-    // maxSize: 1048576,
+    multiple: true,
+    mimetype: 'image/*',
+    maxSize: 1048576,
 
-    // dragEnter: function() {
-    //     $("#exampleDropPane").html("Drop to upload").css({
-    //         'backgroundColor': "#E0E0E0",
-    //         'border': "1px solid #000"
-    //     });
-    // },
-    // dragLeave: function() {
-    //     $("#exampleDropPane").html("Drop files here").css({
-    //         'backgroundColor': "#F6F6F6",
-    //         'border': "1px dashed #666"
-    //     });
-    // },
-    // onSuccess: function(fpfiles) {
-    //     $("#exampleDropPane").text("Done, see result below");
-    //     $("#localDropResult").text(JSON.stringify(fpfiles));
-    // },
-    // onError: function(type, message) {
-    //     $("#localDropResult").text('('+type+') '+ message);
-    // },
-    // onProgress: function(percentage) {
-    //     $("#exampleDropPane").text("Uploading ("+percentage+"%)");
-    // }
-    // });
+    dragEnter: function() {
+        $("#exampleDropPane").html("Drop to upload").css({
+            'backgroundColor': "#E0E0E0",
+            'border': "1px solid #000"
+        });
+    },
+    dragLeave: function() {
+        $("#exampleDropPane").html("Drop files here").css({
+            'backgroundColor': "#F6F6F6",
+            'border': "1px dashed #666"
+        });
+    },
+    onSuccess: function(fpfiles) {
+        $("#exampleDropPane").text("Done, see result below");
+        console.log(fpfiles);
+        $(".selector").fadeOut();
+        var imageData = [];
+        imageData.push('<p>' + fpfiles.length + ' file(s) to upload:</p>');
+        for (var i = 0, f; f = fpfiles[i]; i++) {
+          imageData.push('<li>Name: <span class=\'fileDesc\'>' + f.filename + '</span></li><p> Size: <span class=\'fileDesc\'>' + (f.size/1000).toFixed(0) + ' kb</span></p>');
+        }
+        document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
+        $('#imageData').fadeIn(600);
+        setTimeout(function() {
+          $('input[type=submit]').fadeIn(200);
+        }, 400);
+    },
+    onError: function(type, message) {
+        $("#bassDrop").text('('+type+') '+ message);
+    },
+    onProgress: function(percentage) {
+        $("#exampleDropPane").text("Uploading ("+percentage+"%)");
+    }
+    });
   });
   </script>
 </div>
