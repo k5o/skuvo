@@ -21,7 +21,7 @@ describe "UserLogins" do
 
       it "should log user in" do
         current_path.should == root_path
-        should have_content("Hi, " + user.username)
+        should have_content("Welcome back, " + user.username)
       end
     end
 
