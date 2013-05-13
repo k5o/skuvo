@@ -3,7 +3,7 @@
   <h2>minimalist image hosting</h2>
   <p class="flash"><%= flash[:notice] %></p>
   <% if current_user %>
-    <h2>Hi, <%= link_to @user.username, username_path(@user.username) %></h2>
+    <div class="right">Welcome back, <%= link_to @user.username, username_path(@user.username) %></div>
   <% else %>
     <div class="right"><%= link_to "signup", signup_path %> | <%= link_to "login", login_path %> | <%= link_to "sample", username_path("panorama") %></div>
   <% end %>
@@ -16,7 +16,6 @@
       <input data-fp-apikey="AWbWJDU7S82YMEcTRnbFwz" 
              data-fp-button-text="Select Images" 
              data-fp-button-class="selector" 
-             data-fp-drag-text="Or drop files here" 
              data-fp-mimetypes="image/*" 
              data-fp-option-multiple="true" 
              data-fp-option-services="COMPUTER,FACEBOOK,INSTAGRAM,URL" 
@@ -43,57 +42,55 @@
     </div>
   </div>
 
-<div id="exampleDropPane">
+<div id="dropZone">
 </div>
 
-<div id="bassDrop">
-</div>
-  
   <script>
   $(document).ready(function(){
     $('input[type="submit"]#upload').hide();
-    // $('#imageData').hide();
 
-    filepicker.makeDropPane($('#exampleDropPane')[0], {
+    // filepicker.makeDropPane($('#dropZone')[0], {
 
-    multiple: true,
-    mimetype: 'image/*',
-    maxSize: 1048576,
+    // multiple: true,
+    // mimetype: 'image/*',
+    // maxSize: 1048576,
 
-    dragEnter: function() {
-        $("#exampleDropPane").html("Drop to upload").css({
-            'backgroundColor': "#E0E0E0",
-            'border': "1px solid #000"
-        });
-    },
-    dragLeave: function() {
-        $("#exampleDropPane").html("Drop files here").css({
-            'backgroundColor': "#F6F6F6",
-            'border': "1px dashed #666"
-        });
-    },
-    onSuccess: function(fpfiles) {
-        $("#exampleDropPane").text("Done, see result below");
-        console.log(fpfiles);
-        $(".selector").fadeOut();
-        var imageData = [];
-        imageData.push('<p>' + fpfiles.length + ' file(s) to upload:</p>');
-        for (var i = 0, f; f = fpfiles[i]; i++) {
-          imageData.push('<li>Name: <span class=\'fileDesc\'>' + f.filename + '</span></li><p> Size: <span class=\'fileDesc\'>' + (f.size/1000).toFixed(0) + ' kb</span></p>');
-        }
-        document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
-        $('#imageData').fadeIn(600);
-        setTimeout(function() {
-          $('input[type=submit]').fadeIn(200);
-        }, 400);
-    },
-    onError: function(type, message) {
-        $("#bassDrop").text('('+type+') '+ message);
-    },
-    onProgress: function(percentage) {
-        $("#exampleDropPane").text("Uploading ("+percentage+"%)");
-    }
-    });
-  });
+    // dragEnter: function() {
+    //   $("#dropZone").html('<h2>Drop Files Here</h2>').css({
+    //     'width': '99%',
+    //     'height': '99%',
+    //     'opacity':'0.2',
+    //     'border':'3px dotted #000'
+    //     'z-index': '100'
+    //   });
+    // },
+    // dragLeave: function() {
+    //   $("#dropZone").html('').css({
+    //     'opacity':'1',
+    //     'border':'0px'
+    //   });
+    // },
+    // onSuccess: function(fpfiles) {
+    //   $("#dropZone").hide();
+    //   $(".selector").fadeOut();
+    //   var imageData = [];
+    //   imageData.push('<p>' + fpfiles.length + ' file(s) to upload:</p>');
+    //   for (var i = 0, f; f = fpfiles[i]; i++) {
+    //     imageData.push('<li>Name: <span class=\'fileDesc\'>' + f.filename + '</span></li><p> Size: <span class=\'fileDesc\'>' + (f.size/1000).toFixed(0) + ' kb</span></p>');
+    //   }
+    //   document.getElementById('imageData').innerHTML = '<ul>' + imageData.join('') + '</ul>';
+    //   $('.splashUpload #imageData').fadeIn(600);
+    //   setTimeout(function() {
+    //     $('input[type=submit]').fadeIn(200);
+    //   }, 400);
+    // },
+    // onError: function(type, message) {
+    //     $(".splashUpload #imageData").text('('+type+') '+ message);
+    // },
+    // onProgress: function(percentage) {
+    //     $("#dropZone").text("Uploading ("+percentage+"%)");
+    // }
+    // });
+  })
   </script>
 </div>
