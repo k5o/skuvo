@@ -1,15 +1,15 @@
 <% provide(:title, ' - ' + 'login') %>
 <div class="mainContent">
-	<div class="splashSignup">
-		<h1>Login</h1>
-		<p class="flash"><%= flash[:error] %></p>
-		<%= form_tag sessions_path do %>
-			<%= label_tag :email %>
-			<%= text_field_tag :email, params[:email], :autofocus => true %>
-			<%= label_tag :password %>
-			<%= password_field_tag :password %>
-			<%= submit_tag "I'm back" %>
-			<p><%= link_to "I don't have an account yet", signup_path %></p>
-		<% end %>
-	</div>
+  <div class="splashSignup">
+    <h1>Login</h1>
+    <p class="flash"><%= flash[:error] %></p>
+    <%= form_tag sessions_path do %>
+      <%= label_tag :email %>
+      <%= text_field_tag :email, params[:email], :autofocus => true %>
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+      <%= submit_tag "I'm back" %>
+      <p><%= link_to "I don't have an account yet", signup_path %></p>
+    <% end %>
+  </div>
 </div>

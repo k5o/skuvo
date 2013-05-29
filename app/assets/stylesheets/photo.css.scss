@@ -1,43 +1,43 @@
 .photoShow {
-	text-align: center;
-	img.photo{
-		border: 1px solid #ddd;
-	}
-	input {
-		max-width: 400px !important; /* Overrides the input css in user.css.scss */
-		background-color: #ecf0f1 !important;
-	}
-	button {
-		background-color: transparent;
-		border: 0px;
-		margin: 0px auto;
-		cursor: pointer;
+  text-align: center;
+  img.photo{
+    border: 1px solid #ddd;
+  }
+  input {
+    max-width: 400px !important; /* Overrides the input css in user.css.scss */
+    background-color: #ecf0f1 !important;
+  }
+  button {
+    background-color: transparent;
+    border: 0px;
+    margin: 0px auto;
+    cursor: pointer;
     padding: 3px 3px 4px 3px;
   }
 }
 
 .photoShow p, .photoShow a, #albumText, .flash {
-	text-align: center !important; /* Overrides specifically for flash */
-	margin: 10px;
-	font-family: 'Sanchez';
-	font-size: 1.3em;
+  text-align: center !important; /* Overrides specifically for flash */
+  margin: 10px;
+  font-family: 'Sanchez';
+  font-size: 1.3em;
 }
 
 .photoShow #uploader a {
-	margin: 0px;
+  margin: 0px;
 }
 
 #albumLink {
-	margin-top: 10px;
-	text-align: center;
+  margin-top: 10px;
+  text-align: center;
 }
 
 #albumUrl {
-	text-align: center;
+  text-align: center;
 }
 
 .url {
-	max-width: 180px !important; /* Overrides the input css in user.css.scss */
-	background-color: #ecf0f1 !important;
-	font-size: 1.4em !important;
+  max-width: 180px !important; /* Overrides the input css in user.css.scss */
+  background-color: #ecf0f1 !important;
+  font-size: 1.4em !important;
 }
