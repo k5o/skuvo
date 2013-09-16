@@ -6,16 +6,16 @@ describe "UserSignups" do
 
 
   describe "signing up" do
-		before do 
-			visit root_path 
-	    click_on("signup")
-	    expect(page).to have_title "signup"
-	    expect(page).to have_button "Signup"
-	   end
+    before do 
+      visit root_path 
+      click_on("signup")
+      expect(page).to have_title "signup"
+      expect(page).to have_button "Signup"
+     end
 
     context "with valid input" do
       before do
-				fill_in 'username', :with => "frankthetank"
+        fill_in 'username', :with => "frankthetank"
         fill_in 'email', with: "frank@thetank.com"
         fill_in 'password', with: "passwo"
         fill_in 'confirmpassword', with: "passwo"

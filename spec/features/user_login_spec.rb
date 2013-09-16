@@ -5,14 +5,14 @@ describe "UserLogins" do
   subject { page }
 
   describe "logging in" do
-  	let(:user) { FactoryGirl.create(:user) }
+    let(:user) { FactoryGirl.create(:user) }
 
-		before do 
-			visit root_path 
-	    click_on("login")
-	    expect(page).to have_title "login"
-	    expect(page).to have_button "I'm back"
-	   end
+    before do 
+      visit root_path 
+      click_on("login")
+      expect(page).to have_title "login"
+      expect(page).to have_button "I'm back"
+     end
 
     context "with valid input" do
       before do

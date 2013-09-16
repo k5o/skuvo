@@ -11,10 +11,10 @@ describe Photo do
   it { should belong_to(:album) }
 
   describe "model actions" do
-  	it "should create a short url" do
-  		photo = Photo.create
-  		photo.short_url.should_not be_empty
-  	end
+    it "should create a short url" do
+      photo = Photo.create
+      photo.short_url.should_not be_empty
+    end
 
     # it "shouldn't create duplicate short urls" do
       # subject.short_url = "aaaa"

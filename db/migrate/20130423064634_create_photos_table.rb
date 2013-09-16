@@ -1,5 +1,5 @@
 class CreatePhotosTable < ActiveRecord::Migration
-	def change
+  def change
     create_table :photos do |t|
       t.string :url
       t.string :short_url

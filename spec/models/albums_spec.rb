@@ -6,11 +6,11 @@ describe Album do
   it { should have_many(:photos) }
 
   describe "model actions" do
-  	it "should create a url before saving to db" do
-  		album = Album.new
-  		album.save
-  		album.url.should_not be_empty
-  	end
+    it "should create a url before saving to db" do
+      album = Album.new
+      album.save
+      album.url.should_not be_empty
+    end
 
     # it "shouldn't create duplicate urls" do
     #   album1 = Album.new
