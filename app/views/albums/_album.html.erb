@@ -1,12 +1,14 @@
-<a href="/a/<%= album.url %>">
-  <img alt="skuvo uploaded album" class="photo" height="300" src="<%= album.photos.first.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
-</a>
-<div>
-  <input style="string" value="http://skuvo.com/a/<%= album.url %>" size="30" readonly="readonly" onclick="this.select()">
-</div>  
-<div class="photoButtons">
-  <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet'}) %>
-  <% if current_user == @user %>
-    <%= link_to image_tag('/assets/glyphicons_remove.png', alt: "Delete Image"), album, method: "delete", confirm: "Delete album? This will delete all included images as well." %> 
-  <% end %>
-</div>
+<% if album.photos.any? %>
+  <a href="/a/<%= album.url %>">
+    <img alt="skuvo uploaded album" class="photo" height="300" src="<%= album.photos.first.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
+  </a>
+  <div>
+    <input style="string" value="http://skuvo.com/a/<%= album.url %>" size="30" readonly="readonly" onclick="this.select()">
+  </div>  
+  <div class="photoButtons">
+    <%= custom_tweet_button(image_tag('/assets/glyphicons_twitter.png'), {url: "http://www.skuvo.com/a/" + album.url, text: "Check out this skuvo-uploaded album:"}, {id: 'tweet'}) %>
+    <% if current_user == @user %>
+      <%= link_to image_tag('/assets/glyphicons_remove.png', alt: "Delete Image"), album, method: "delete", confirm: "Delete album? This will delete all included images as well." %> 
+    <% end %>
+  </div>
+<% end %>
