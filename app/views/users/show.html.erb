@@ -1,6 +1,6 @@
 <% provide(:title, ' - ' + @user.username + '\'s gallery') %>
 <h1>
-  skuvo<span><%= link_to image_tag('/assets/glyphicons_upload.png'), root_path %></span>
+  <%= link_to "skuvo", root_path, class: "no-color" %><span><%= link_to image_tag('/assets/glyphicons_upload.png'), root_path %></span>
 </h1>
 <% if current_user == @user %>
   <h2>

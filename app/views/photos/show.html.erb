@@ -1,10 +1,10 @@
-<div class="photoShow">
-  <h1>
-  <%= link_to "skuvo", root_path %><span id="uploader"><%= link_to image_tag('/assets/glyphicons_upload.png'), root_path %></span>
+<h1>
+  <%= link_to "skuvo", root_path, class: "no-color" %><span id="uploader"><%= link_to image_tag('/assets/glyphicons_upload.png'), root_path %></span>
 </h1>
+<div class="photoShow">
   <p class="flash"><%= flash[:notice] %></p>
   <a href="<%= @photo.url %>">
-    <img alt="skuvo uploaded image" class="photo" height="300" src="<%= @photo.url %>/convert?fit=crop&amp;height=300&amp;width=400" width="400" />
+    <img alt="skuvo uploaded image" class="photo" src="<%= @photo.url %>/convert?fit=crop&amp;height=300&amp;width=400" />
   </a>
   <div>
     <input style="string" value="http://skuvo.com/<%= @photo.short_url %>" size="30" readonly="readonly" onclick="this.select()">
@@ -19,9 +19,9 @@
       <img alt="Download image" id="download" src="/assets/glyphicons_download.png" />
     </button>
   </div>
-<% if !current_user %>
-  <p><%= link_to "Signup to save your images", signup_path %></p>
-<% else %>
-  <%= link_to "Return to " + @user.username + "'s gallery", username_path(@user.username) %>
-<% end %>
+  <% if !current_user %>
+    <p><%= link_to "Signup to save your images", signup_path %></p>
+  <% else %>
+    <%= link_to "Return to " + @user.username + "'s gallery", username_path(@user.username) %>
+  <% end %>
 </div>
