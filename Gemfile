@@ -7,7 +7,7 @@ gem 'tweet-button'
 gem 'newrelic_rpm'
 gem 'will_paginate'
 gem 'pg'
-gem 'bcrypt-ruby'
+gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'jquery-rails'
 
 group :assets do
