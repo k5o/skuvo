@@ -1,6 +1,6 @@
 <div class="photoShow">
   <h1>
-  skuvo<span id="uploader"><%= link_to image_tag('/assets/glyphicons_upload.png'), root_path %></span>
+  <%= link_to "skuvo", root_path %><span id="uploader"><%= link_to image_tag('/assets/glyphicons_upload.png'), root_path %></span>
 </h1>
   <p class="flash"><%= flash[:notice] %></p>
   <a href="<%= @photo.url %>">

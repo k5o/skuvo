@@ -7,7 +7,7 @@ class PhotosController < ApplicationController
       photo.url     = images[0]
       photo.user_id = current_user.id if current_user
       photo.save
-      flash[:notice] = "Uploaded photo as a guest" if !current_user
+      flash[:notice] = "Uploaded photo as a guest" unless current_user
 
       redirect_to photo_url_path(photo.short_url)
     elsif images.length > 1

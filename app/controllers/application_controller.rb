@@ -19,8 +19,7 @@ class ApplicationController < ActionController::Base
   def no_user?(name)
     !name.blank? and !User.exists?(:username => name)
   end
-    
-  
+
   protected
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]

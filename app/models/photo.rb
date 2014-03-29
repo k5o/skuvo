@@ -7,17 +7,17 @@ class Photo < ActiveRecord::Base
 
   private
 
-  def random_short_url
-    SecureRandom.hex(2)
-  end
-
-  def create_short_url
-    url = random_short_url
-
-    while Photo.find_by_short_url(random_short_url) do
-      url = random_short_url  
+    def random_short_url
+      SecureRandom.hex(2)
     end
-    
-    self.short_url = url
-  end
+
+    def create_short_url
+      url = random_short_url
+
+      while Photo.find_by_short_url(random_short_url) do
+        url = random_short_url  
+      end
+      
+      self.short_url = url
+    end
 end
