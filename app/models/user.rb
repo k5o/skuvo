@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
   before_create { generate_token(:auth_token) }
   before_create :downcase_username
 
-  EMAIL_REGEXP = /^([0-9a-zA-Z]([-\.\w+]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
+  EMAIL_REGEXP = /^.+@.+\..+$/
   USERNAME_REGEXP = /^[a-zA-Z0-9_-]{3,16}$/
-  
+
   validates_presence_of :username
   validates :username, :format =>  { :with => USERNAME_REGEXP }
   validates :username, :length => { :minimum => 3, :maximum => 16}
@@ -29,6 +29,7 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, password)
     user = find_by_email(email)
+
     if user && user.password_digest == BCrypt::Engine.hash_secret(password, user.password_salt)
       user
     else
